@@ -47,7 +47,7 @@ Grace :: Looked over proposal.
 
 2017-05-18
 --------------------------------------------------------------
-Kenny :: 
+Kenny :: Made plan.
 Jasper :: Linked submodule, helped fill out form.
 Grace :: Created repo, helped fill out form, created plan and 
 devlog files.

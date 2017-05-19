@@ -1,28 +1,29 @@
-PLANZ
+PLAN
 
 Most crucial job:
-- identifying how to create the data structures we plan to implement in Processing.
+- identifying how to create and display the data structures we plan to implement in Processing.
 - Figuring out how the user will input his/her elements of the data structures (mouse click, typing?)
 - How will the animations work?
 
 Core functionality components:
 - Accurate display of data structures
+- User input of data
 
 Nonessential components:
 - color
 - placement of objects
+- animation
 
 Prereq components:
-- Having the display of the sorts/ structures down
-- Creating the visualization of an empty data structure before elements are filled in
+- Having the display of the structures down before doing algorithms
 
 Delegated tasks:
 - create methods to display the data structures
 
 Collaboration tasks:
-- protect design
+- design
 
 TIMELINE:
 - start with getting an array displayed (simplest, we hope)
 - other data structures
-- sorts!!
+- algorithms!!
