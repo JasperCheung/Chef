@@ -19,6 +19,7 @@ Prereq components:
 
 Delegated tasks:
 - create methods to display the data structures
+- user interface work
 
 Collaboration tasks:
 - design
@@ -26,4 +27,5 @@ Collaboration tasks:
 TIMELINE:
 - start with getting an array displayed (simplest, we hope)
 - other data structures
+- handling user interface and user input
 - algorithms!!
