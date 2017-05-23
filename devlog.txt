@@ -52,3 +52,17 @@ Jasper :: Linked submodule, helped fill out form.
 Grace :: Created repo, helped fill out form, created plan and 
 devlog files.
 ==============================================================
+
+2017-05-19
+--------------------------------------------------------------
+Kenny :: Added ArrayList display
+Jasper :: 
+Grace :: 
+==============================================================
+
+2017-05-20
+--------------------------------------------------------------
+Kenny :: Added LinkedList display
+Jasper :: 
+Grace :: 
+==============================================================
