@@ -9,7 +9,6 @@ BST bt;
 
 void setup() {
   size(700, 700);
-  background(100);
   textAlign(CENTER, CENTER);
   
   al = new ArrayList<Integer>();
@@ -32,6 +31,8 @@ void setup() {
 }
 
 void draw() {
+  background(100);
+  filter(BLUR, 4); //make circles look good
   displayAl();
   displayLl();
   displaySt();
