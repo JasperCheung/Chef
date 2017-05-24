@@ -3,7 +3,10 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 ArrayList<Integer> al;
-LinkedList<Integer> ll;
+//singly-linked and double-linked lists
+LinkedList<Integer> sll;
+LinkedList<Integer> dll;
+
 Stack<Integer> st;
 BST bt;
 
@@ -15,10 +18,14 @@ void setup() {
   al.add(3);
   al.add(6);
   al.add(10);
-  ll = new LinkedList<Integer>();
-  ll.add(2);
-  ll.add(5);
-  ll.add(13);
+  sll = new LinkedList<Integer>();
+  sll.add(2);
+  sll.add(5);
+  sll.add(13);
+  dll = new LinkedList<Integer>();
+  dll.add(7);
+  dll.add(1);
+  dll.add(11);
   st = new Stack<Integer>();
   st.push(1);
   st.push(4);
@@ -34,7 +41,8 @@ void draw() {
   background(100);
   filter(BLUR, 4); //make circles look good
   displayAl();
-  displayLl();
+  displaySll();
+  displayDll();
   displaySt();
   displayBt();
 }
@@ -53,23 +61,23 @@ void displayAl() {
 }
 
 //todo: use iterator
-void displayLl() {
+void displaySll() {
   int x = 40;
   int y = 100;
   int size = 40;
-  for (int i = 0; i < ll.size(); i++) {
+  for (int i = 0; i < sll.size(); i++) {
     //draw node
     //draw square holding value
     fill(255);
     rect(x, y, size, size); 
     fill(0);
-    text(ll.get(i), x + size / 2, y + size / 2);
+    text(sll.get(i), x + size / 2, y + size / 2);
     x += size;
     //draw square with link
     fill(255);
     rect(x, y, size, size);
     //draw cross if no next node
-    if (i == ll.size() - 1)
+    if (i == sll.size() - 1)
       drawCross(x, y, x + size, y + size);
     //else draw arrow to next node
     else
@@ -91,6 +99,10 @@ void drawArrow(int x1, int y1, int x2) {
   //arrowhead
   line(x2, y1, x2 - height, y1 + height);
   line(x2, y1, x2 - height, y1 - height);
+}
+
+void displayDll() {
+  
 }
 
 //draw boxes from the bottom to the top
