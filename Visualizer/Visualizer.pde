@@ -5,6 +5,7 @@ import java.util.Stack;
 ArrayList<Integer> al;
 LinkedList<Integer> ll;
 Stack<Integer> st;
+BST bt;
 
 void setup() {
   size(700, 700);
@@ -23,12 +24,18 @@ void setup() {
   st.push(1);
   st.push(4);
   st.push(15);
+  bt = new BST();
+  bt.insert(0);
+  bt.insert(3);
+  bt.insert(17);
+  bt.insert(-3);
 }
 
 void draw() {
   displayAl();
   displayLl();
   displaySt();
+  displayBt();
 }
 
 void displayAl() {
@@ -98,5 +105,33 @@ void displaySt() {
     fill(0);
     text(i, x + size / 2, y + size / 2);
     y -= size;
+  }
+}
+
+void displayBt() {
+  float x = 400;
+  float y = 200;
+  int size = 40;
+  displayBtNode(bt.getRoot(), x, y, size);
+}
+void displayBtNode(TreeNode tn, float x, float y, int size) {
+  if (tn == null)
+    return;
+  fill(255);
+  ellipse(x, y, size, size);
+  fill(0);
+  text(tn.getValue(), x, y);
+  float adjust = (size / 2) / sqrt(2); //go the border of circle
+  if (tn.getLeft() != null) {
+    float newX = x - size * 1.5;
+    float newY = y + size * 1.5;
+    line(x - adjust, y + adjust, newX + adjust, newY - adjust); 
+    displayBtNode(tn.getLeft(), newX, newY, size);
+  }
+  if (tn.getRight() != null) {
+    float newX = x + size * 1.5;
+    float newY = y + size * 1.5;
+    line(x + adjust, y + adjust, newX - adjust, newY - adjust);
+    displayBtNode(tn.getRight(), newX, newY, size);
   }
 }
