@@ -1,11 +1,16 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Stack;
 
 ArrayList<Integer> al;
 LinkedList<Integer> ll;
+Stack<Integer> st;
 
 void setup() {
   size(700, 700);
+  background(100);
+  textAlign(CENTER, CENTER);
+  
   al = new ArrayList<Integer>();
   al.add(3);
   al.add(6);
@@ -14,13 +19,16 @@ void setup() {
   ll.add(2);
   ll.add(5);
   ll.add(13);
+  st = new Stack<Integer>();
+  st.push(1);
+  st.push(4);
+  st.push(15);
 }
 
 void draw() {
-  background(100);
-  textAlign(CENTER, CENTER);
   display(al);
   display(ll);
+  display(st);
 }
 
 void display(ArrayList<Integer> arrayList) {
@@ -75,4 +83,20 @@ void drawArrow(int x1, int y1, int x2) {
   //arrowhead
   line(x2, y1, x2 - height, y1 + height);
   line(x2, y1, x2 - height, y1 - height);
+}
+
+//draw boxes from the bottom to the top
+void display(Stack<Integer> stack) {
+  int x = 40;
+  int y = 600;
+  int size = 40;
+  for (int i : stack) {
+    //draw box
+    fill(255);
+    rect(x, y, size, size);
+    //draw text
+    fill(0);
+    text(i, x + size / 2, y + size / 2);
+    y -= size;
+  }
 }
