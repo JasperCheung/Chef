@@ -26,16 +26,16 @@ void setup() {
 }
 
 void draw() {
-  display(al);
-  display(ll);
-  display(st);
+  displayAl();
+  displayLl();
+  displaySt();
 }
 
-void display(ArrayList<Integer> arrayList) {
+void displayAl() {
   int x = 40;
   int y = 40;
   int size = 40;
-  for (int i : arrayList) {
+  for (int i : al) {
     fill(255);
     rect(x, y, size, size); //draw square
     fill(0);
@@ -45,23 +45,23 @@ void display(ArrayList<Integer> arrayList) {
 }
 
 //todo: use iterator
-void display(LinkedList<Integer> linkedList) {
+void displayLl() {
   int x = 40;
   int y = 100;
   int size = 40;
-  for (int i = 0; i < linkedList.size(); i++) {
+  for (int i = 0; i < ll.size(); i++) {
     //draw node
     //draw square holding value
     fill(255);
     rect(x, y, size, size); 
     fill(0);
-    text(linkedList.get(i), x + size / 2, y + size / 2);
+    text(ll.get(i), x + size / 2, y + size / 2);
     x += size;
     //draw square with link
     fill(255);
     rect(x, y, size, size);
     //draw cross if no next node
-    if (i == linkedList.size() - 1)
+    if (i == ll.size() - 1)
       drawCross(x, y, x + size, y + size);
     //else draw arrow to next node
     else
@@ -86,11 +86,11 @@ void drawArrow(int x1, int y1, int x2) {
 }
 
 //draw boxes from the bottom to the top
-void display(Stack<Integer> stack) {
+void displaySt() {
   int x = 40;
   int y = 600;
   int size = 40;
-  for (int i : stack) {
+  for (int i : st) {
     //draw box
     fill(255);
     rect(x, y, size, size);
