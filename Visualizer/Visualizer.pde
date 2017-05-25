@@ -18,8 +18,8 @@ void setup() {
 
   //buttons
   buttons = new ArrayList<Button>();
-  buttons.add(new Button(0, 0, 40, 40, 0));
-  buttons.add(new Button(40, 0, 40, 40, 1));
+  buttons.add(new Button(0, 0, 80, 40, "ArrayList", 0));
+  buttons.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
   
   al = new ArrayList<Integer>();
   al.add(3);
