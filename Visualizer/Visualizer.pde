@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
+ArrayList<Button> buttons;
+
 ArrayList<Integer> al;
 //singly-linked and double-linked lists
 LinkedList<Integer> sll;
@@ -13,6 +15,11 @@ BST bt;
 void setup() {
   size(700, 700);
   textAlign(CENTER, CENTER);
+
+  //buttons
+  buttons = new ArrayList<Button>();
+  buttons.add(new Button(0, 0, 40, 40, 0));
+  buttons.add(new Button(40, 0, 40, 40, 1));
   
   al = new ArrayList<Integer>();
   al.add(3);
@@ -39,11 +46,32 @@ void setup() {
 
 void draw() {
   background(100);
+  for (Button b : buttons)
+    b.display();
   displayAl();
   displaySll();
   displayDll();
   displaySt();
   displayBt();
+}
+
+void mousePressed() {
+  //go through buttons to see if button pressed
+  for (Button b : buttons) {
+    //if pressed, do the action with the actionId
+    if (b.contains(mouseX, mouseY))
+      buttonAction(b.getActionID());
+  }
+}
+
+void buttonAction(int actionID) {
+  switch(actionID) {
+    case 0:
+      System.out.println("action 0");
+      break;
+    case 1:
+      System.out.println("action 1");
+  }
 }
 
 void displayAl() {
