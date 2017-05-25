@@ -4,6 +4,8 @@ import java.util.Stack;
 
 ArrayList<Button> buttons;
 
+int dataStructure;
+
 ArrayList<Integer> al;
 //singly-linked and double-linked lists
 LinkedList<Integer> sll;
@@ -20,6 +22,8 @@ void setup() {
   buttons = new ArrayList<Button>();
   buttons.add(new Button(0, 0, 80, 40, "ArrayList", 0));
   buttons.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
+  
+  dataStructure = 0;
   
   al = new ArrayList<Integer>();
   al.add(3);
@@ -48,11 +52,25 @@ void draw() {
   background(100);
   for (Button b : buttons)
     b.display();
-  displayAl();
-  displaySll();
-  displayDll();
-  displaySt();
-  displayBt();
+  switch(dataStructure) {
+    case 0:
+      displayAl();
+      break;
+    case 1:
+      displaySll();
+      break;
+    case 2:
+      displayDll();
+      break;
+    case 3:
+      displaySt();
+      break;
+    case 4:
+      displayBt();
+      break;
+    default:
+      System.out.println("Unknown dataStructure (ID)");
+  }
 }
 
 void mousePressed() {
@@ -67,10 +85,13 @@ void mousePressed() {
 void buttonAction(int actionID) {
   switch(actionID) {
     case 0:
-      System.out.println("action 0");
+      dataStructure = 0;
       break;
     case 1:
-      System.out.println("action 1");
+      dataStructure = 1;
+      break;
+    default:
+      System.out.println("Unknown actionID");
   }
 }
 
