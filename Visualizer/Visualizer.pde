@@ -4,6 +4,7 @@ import java.util.Stack;
 
 ArrayList<Button> buttons;
 
+//state for which dataStructure to display
 int dataStructure;
 
 ArrayList<Integer> al;
@@ -22,6 +23,9 @@ void setup() {
   buttons = new ArrayList<Button>();
   buttons.add(new Button(0, 0, 80, 40, "ArrayList", 0));
   buttons.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
+  buttons.add(new Button(210, 0, 150, 40, "Doubly-Linked List", 2));
+  buttons.add(new Button(350, 0, 60, 40, "Stack", 3));
+  buttons.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
   
   dataStructure = 0;
   
@@ -85,10 +89,11 @@ void mousePressed() {
 void buttonAction(int actionID) {
   switch(actionID) {
     case 0:
-      dataStructure = 0;
-      break;
     case 1:
-      dataStructure = 1;
+    case 2:
+    case 3:
+    case 4:
+      dataStructure = actionID;
       break;
     default:
       System.out.println("Unknown actionID");
