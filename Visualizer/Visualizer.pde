@@ -39,7 +39,6 @@ void setup() {
 
 void draw() {
   background(100);
-  filter(BLUR, 4); //make circles look good
   displayAl();
   displaySll();
   displayDll();
