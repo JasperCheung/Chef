@@ -1,6 +1,8 @@
+final String[] NUM = {"0", "1", "2","3","4","5","6","7","8","9"};
 color tangle =color ( (int) random(255),(int) random(255),(int) random(255) );
 boolean mouseOn = false;//if you pressed on the button 
 PFont f;
+int x, y, len, width; 
 // Variable to store text currently being typed
 String typing = "";
 // Variable to store saved text when return is hit
@@ -15,11 +17,10 @@ void setup(){
   
 }
 
-
 void draw(){
   fill( tangle );
   rect(0,0,500,500);
-  tet();
+ printBool();
   int indent = 25;  
 
   // Set the font and fill for text  
@@ -31,19 +32,14 @@ void draw(){
   text(saved, indent, 90);
  
 }
-void takeIn(){
-   if( mouseOn){
-  fill(0);
-  text("true" , 250, 250);}
-  
-}
-void tet(){
+
+void printBool(){
   if( mouseOn){
   fill(0);
-  text("true" , 250, 250);}
+  text("Mouse On: true" , 250, 250);}
   else{
      fill(0);
-  text("false" , 250, 250);}
+  text("Mouse On: false" , 250, 250);}
   
 }
 void mousePressed(){
@@ -67,5 +63,14 @@ void keyPressed() {
     saved = "";
     typing = typing + key;   
   }
-}  
+}
+
+boolean isInt (String s){
+  for(int i  = 0; i < s.length(); i++){
+    for(String num: NUM){
+     if(!s.substring(i, i++).equals(num)) return false;
+    }
+  }
+ return true;
   
+}
