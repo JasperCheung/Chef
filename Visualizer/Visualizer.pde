@@ -3,6 +3,9 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 ArrayList<Button> buttons;
+ArrayList<TextBox> textBoxes;
+//textBox to edit when keys are pressed
+TextBox focus;
 
 //state for which data structure to display
 int dataStructure;
@@ -26,6 +29,10 @@ void setup() {
   buttons.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   buttons.add(new Button(350, 0, 60, 40, "Stack", 3));
   buttons.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
+  
+  //textBoxes
+  textBoxes = new ArrayList<TextBox>();
+  textBoxes.add(new TextBox(0, 40, 100, 30));
   
   dataStructure = 0;
   
@@ -56,6 +63,8 @@ void draw() {
   background(100);
   for (Button b : buttons)
     b.display();
+  for (TextBox t : textBoxes)
+    t.display();
   switch(dataStructure) {
     case 0:
       displayAl();
@@ -84,6 +93,19 @@ void mousePressed() {
     if (b.contains(mouseX, mouseY))
       buttonAction(b.getActionID());
   }
+  //go through textboxes to change focus
+  for (TextBox t : textBoxes) {
+    if (t.contains(mouseX, mouseY))
+      focus = t;
+  }
+}
+
+void keyPressed() {
+  if (focus == null)
+    return;
+  String numbers = "0123456789";
+  if (numbers.indexOf(key) != -1)
+    focus.text += key;
 }
 
 void buttonAction(int actionID) {
