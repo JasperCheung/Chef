@@ -170,7 +170,6 @@ void drawArrowLeft(int x1, int y1, int x2, int y2){
   line(x1, y1, x2, y2);
 }
 
-
 void displayDll() {
   int x = 40;
   int y = 100;
@@ -190,9 +189,10 @@ void displayDll() {
     if (i == sll.size() - 1)
       drawCross(x, y, x + size, y + size);
     //else draw arrow to next node
-    else
+    else{
       drawArrowRight(x + size / 2, y + 5 + size / 2, x + size * 2, y + 5 +size/ 2);
       drawArrowLeft(x + size / 2, y - 5 + size / 2, x + size * 2, y - 5 +size/2);
+    }
     x += size * 2;
   }
 }
