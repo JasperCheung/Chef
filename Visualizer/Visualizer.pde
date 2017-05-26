@@ -147,15 +147,54 @@ void drawCross(int x1, int y1, int x2, int y2) {
 
 //draw a (horizontal) arrow from (x1, y1) to (x2, y1)
 void drawArrow(int x1, int y1, int x2) {
-  int height = 8;
+  int elevation = 8;
   line(x1, y1, x2, y1);
   //arrowhead
-  line(x2, y1, x2 - height, y1 + height);
-  line(x2, y1, x2 - height, y1 - height);
+  line(x2, y1, x2 - elevation, y1 + elevation);
+  line(x2, y1, x2 - elevation, y1 - elevation);
 }
 
+void drawArrowRight(int x1, int y1, int x2, int y2){
+  int elevation = 8;
+  line(x1, y1, x2, y2);
+  //arrowhead
+  line(x2, y1, x2 - elevation, y1 + elevation);
+  line(x2, y1, x2 - elevation, y1 - elevation);
+}
+
+void drawArrowLeft(int x1, int y1, int x2, int y2){
+  int elevation = 8;
+  //arrowhead
+  line(x1, y1, x1 + elevation, y1 + elevation);
+  line(x1, y1, x1 + elevation, y1 - elevation);
+  line(x1, y1, x2, y2);
+}
+
+
 void displayDll() {
-  
+  int x = 40;
+  int y = 100;
+  int size = 40;
+  for (int i = 0; i < sll.size(); i++) {
+    //draw node
+    //draw square holding value
+    fill(255);
+    rect(x, y, size, size); 
+    fill(0);
+    text(sll.get(i), x + size / 2, y + size / 2);
+    x += size;
+    //draw square with link
+    fill(255);
+    rect(x, y, size, size);
+    //draw cross if no next node
+    if (i == sll.size() - 1)
+      drawCross(x, y, x + size, y + size);
+    //else draw arrow to next node
+    else
+      drawArrowRight(x + size / 2, y + 5 + size / 2, x + size * 2, y + 5 +size/ 2);
+      drawArrowLeft(x + size / 2, y - 5 + size / 2, x + size * 2, y - 5 +size/2);
+    x += size * 2;
+  }
 }
 
 //draw boxes from the bottom to the top
