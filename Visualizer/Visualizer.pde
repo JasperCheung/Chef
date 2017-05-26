@@ -23,7 +23,7 @@ void setup() {
   buttons = new ArrayList<Button>();
   buttons.add(new Button(0, 0, 80, 40, "ArrayList", 0));
   buttons.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
-  buttons.add(new Button(210, 0, 150, 40, "Doubly-Linked List", 2));
+  buttons.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   buttons.add(new Button(350, 0, 60, 40, "Stack", 3));
   buttons.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
   
