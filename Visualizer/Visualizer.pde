@@ -4,7 +4,7 @@ import java.util.Stack;
 
 ArrayList<Button> buttons;
 
-//state for which dataStructure to display
+//state for which data structure to display
 int dataStructure;
 
 ArrayList<Integer> al;
@@ -102,7 +102,7 @@ void buttonAction(int actionID) {
 
 void displayAl() {
   int x = 40;
-  int y = 40;
+  int y = 100;
   int size = 40;
   for (int i : al) {
     fill(255);
@@ -160,8 +160,8 @@ void displayDll() {
 
 //draw boxes from the bottom to the top
 void displaySt() {
-  int x = 40;
-  int y = 600;
+  float x = width / 2;
+  float y = height - 100;
   int size = 40;
   for (int i : st) {
     //draw box
@@ -175,8 +175,8 @@ void displaySt() {
 }
 
 void displayBt() {
-  float x = 400;
-  float y = 200;
+  float x = width / 2;
+  float y = 100;
   int size = 40;
   displayBtNode(bt.getRoot(), x, y, size);
 }
