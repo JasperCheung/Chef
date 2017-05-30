@@ -156,6 +156,10 @@ void displayAl() {
   int y = 100;
   int size = 40;
   for (int i : al) {
+    if( x + size > width){
+      y+=60;
+      x = 40;
+    }
     fill(255);
     rect(x, y, size, size); //draw square
     fill(0);
