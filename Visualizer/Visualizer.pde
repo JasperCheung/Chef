@@ -96,7 +96,7 @@ void mousePressed() {
     //if pressed, do the action with the actionId
     if (b.contains(mouseX, mouseY))
       changeStructure(b.getActionID());
-  }
+  }//BUTTON TEXT BOX
   for (Button b : userInput) {
     if (b.contains(mouseX, mouseY))
       buttonAction(b.getActionID());
