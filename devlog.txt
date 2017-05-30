@@ -81,3 +81,10 @@ Jasper :: Work more on text
 Kenny :: Buttons, data structure state, display data structures depending on buttons
 Grace :: updated plan
 ==============================================================
+
+2017-05-26
+--------------------------------------------------------------
+Kenny :: Added basic text boxes for user input
+Jasper :: Helped design text boxes
+Grace :: Worked on linked-lists' display
+==============================================================
