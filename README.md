@@ -1,9 +1,5 @@
-# Chef
+# Chef: Kenny Chen, Jasper Cheung, Grace Cuenca
 cause we're cooking up something gud
-
-Kenny Chen
-Jasper Cheung
-Grace Cuenca
 
 # Java Visualizer
 
