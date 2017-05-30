@@ -88,3 +88,9 @@ Kenny :: Added basic text boxes for user input
 Jasper :: Helped design text boxes
 Grace :: Worked on linked-lists' display
 ==============================================================
+
+2017-05-29
+--------------------------------------------------------------
+Kenny :: Basic working UI for ArrayList
+Grace :: Updated README
+==============================================================
