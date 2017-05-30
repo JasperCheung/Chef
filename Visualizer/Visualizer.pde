@@ -139,6 +139,7 @@ void changeStructure(int actionID) {
 
 void buttonAction(int actionID) {
   switch(actionID) {
+    //arrayList
     case 0:
       String text = textBoxes.get(0).text;
       if (text.equals(""))
@@ -169,8 +170,9 @@ void displayAl() {
 }
 
 void displayAlUI() {
-  textBoxes.add(new TextBox(0, 40, 100, 30));
+  textBoxes.add(new TextBox(0, 40, 100, 60, "value"));
   userInput.add(new Button(100, 40, 50, 30, "add", 0));
+  //textBoxes.add(new TextBox
 }
 
 //todo: use iterator
