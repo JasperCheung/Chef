@@ -140,13 +140,34 @@ void changeStructure(int actionID) {
 void buttonAction(int actionID) {
   switch(actionID) {
     //arrayList
-    case 0:
+    case 0: {
       String text = textBoxes.get(0).text;
       if (text.equals(""))
         break;
       int num = Integer.parseInt(text);
       al.add(num);
       break;
+    }
+    case 1: {
+      String text = textBoxes.get(1).text;
+      if (text.equals(""))
+        break;
+      int ind = Integer.parseInt(text);
+      text = textBoxes.get(2).text;
+      if (text.equals(""))
+        break;
+      int val = Integer.parseInt(text);
+      al.add(ind, val);
+      break;
+    }
+    case 2: {
+      String text = textBoxes.get(3).text;
+      if (text.equals(""))
+        break;
+      int ind = Integer.parseInt(text);
+      al.remove(ind);
+      break;
+    }
     default:
       System.out.println("Unknown actionID");
   }
@@ -172,7 +193,13 @@ void displayAl() {
 void displayAlUI() {
   textBoxes.add(new TextBox(0, 40, 100, 60, "value"));
   userInput.add(new Button(100, 40, 50, 30, "add", 0));
-  //textBoxes.add(new TextBox
+  
+  textBoxes.add(new TextBox(150, 40, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, 40, 100, 60, "value"));
+  userInput.add(new Button(350, 40, 100, 30, "add-at-index", 1));
+  
+  textBoxes.add(new TextBox(450, 40, 100, 60, "index"));
+  userInput.add(new Button(550, 40, 50, 30, "remove", 2));
 }
 
 //todo: use iterator
