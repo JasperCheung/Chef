@@ -2,13 +2,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
-ArrayList<Button> buttons;
+ArrayList<Button> structures;
 ArrayList<TextBox> textBoxes;
 //textBox to edit when keys are pressed
 TextBox focus;
+ArrayList<Button> userInput;
 
 //state for which data structure to display
 int dataStructure;
+//boolean to know if an update to the UI is needed
+boolean dataStructureChanged;
 
 ArrayList<Integer> al;
 //singly-linked and double-linked lists
@@ -22,19 +25,20 @@ void setup() {
   size(700, 700);
   textAlign(CENTER, CENTER);
 
-  //buttons
-  buttons = new ArrayList<Button>();
-  buttons.add(new Button(0, 0, 80, 40, "ArrayList", 0));
-  buttons.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
-  buttons.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
-  buttons.add(new Button(350, 0, 60, 40, "Stack", 3));
-  buttons.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
-  
-  //textBoxes
+  //structures
+  structures = new ArrayList<Button>();
+  structures.add(new Button(0, 0, 80, 40, "ArrayList", 0));
+  structures.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
+  structures.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
+  structures.add(new Button(350, 0, 60, 40, "Stack", 3));
+  structures.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
+
   textBoxes = new ArrayList<TextBox>();
-  textBoxes.add(new TextBox(0, 40, 100, 30));
+  userInput = new ArrayList<Button>();
   
+  //show arraylist as default
   dataStructure = 0;
+  dataStructureChanged = true;
   
   al = new ArrayList<Integer>();
   al.add(3);
@@ -61,10 +65,12 @@ void setup() {
 
 void draw() {
   background(100);
-  for (Button b : buttons)
+  for (Button b : structures)
     b.display();
   for (TextBox t : textBoxes)
     t.display();
+  for (Button b : userInput)
+    b.display();
   switch(dataStructure) {
     case 0:
       displayAl();
@@ -84,12 +90,28 @@ void draw() {
     default:
       System.out.println("Unknown dataStructure (ID)");
   }
+  if (dataStructureChanged) {
+    //clear current UI
+    textBoxes.clear();
+    userInput.clear();
+    //show new UI
+    switch(dataStructure) {
+      case 0:
+        displayAlUI();
+        break;
+    }
+    dataStructureChanged = false;
+  }
 }
 
 void mousePressed() {
   //go through buttons to see if button pressed
-  for (Button b : buttons) {
+  for (Button b : structures) {
     //if pressed, do the action with the actionId
+    if (b.contains(mouseX, mouseY))
+      buttonAction(b.getActionID());
+  }
+  for (Button b : userInput) {
     if (b.contains(mouseX, mouseY))
       buttonAction(b.getActionID());
   }
@@ -106,6 +128,11 @@ void keyPressed() {
   String numbers = "0123456789";
   if (numbers.indexOf(key) != -1)
     focus.text += key;
+  if (key == DELETE || key == BACKSPACE) {
+    String text = focus.text;
+    if (!text.equals(""))
+      focus.text = text.substring(0, text.length() - 1);
+  }
 }
 
 void buttonAction(int actionID) {
@@ -115,7 +142,17 @@ void buttonAction(int actionID) {
     case 2:
     case 3:
     case 4:
+      if (actionID == dataStructure)
+        break;
+      dataStructureChanged = true;
       dataStructure = actionID;
+      break;
+    case 5:
+      String text = textBoxes.get(0).text;
+      if (text.equals(""))
+        break;
+      int num = Integer.parseInt(text);
+      al.add(num);
       break;
     default:
       System.out.println("Unknown actionID");
@@ -133,6 +170,11 @@ void displayAl() {
     text(i, x + size / 2, y + size / 2);
     x += size;
   }
+}
+
+void displayAlUI() {
+  textBoxes.add(new TextBox(0, 40, 100, 30));
+  userInput.add(new Button(100, 40, 50, 30, "add", 5));
 }
 
 //todo: use iterator

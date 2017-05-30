@@ -1,6 +1,6 @@
 class TextBox {
   int x, y, len, wid;
-  public String text = "";
+  String text = "";
   
   TextBox(int initX, int initY, int initLen, int initWid) {
     x = initX;
