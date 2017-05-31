@@ -136,7 +136,7 @@ void changeStructure(int actionID) {
       break;
     case 1: 
       displaySllUI();
-       break;
+      break;
   }
 }
 
@@ -175,6 +175,41 @@ void buttonAction(int actionID) {
       if (ind == null || ind >= al.size() || val == null)
         break;
       al.set(ind, val);
+      break;
+    }
+    //singly-linked list
+    //add
+    case 4: {
+      Integer num = numFromTextbox(0);
+      if (num == null)
+        break;
+      sll.add(num);
+      break;
+    }
+    //add-at-index
+    case 5: {
+      Integer ind = numFromTextbox(1);
+      Integer val = numFromTextbox(2);
+      if (ind == null || ind >= sll.size() || val == null)
+        break;
+      sll.add(ind, val);
+      break;
+    }
+    //remove
+    case 6: {
+      Integer ind = numFromTextbox(3);
+      if (ind == null || ind >= sll.size())
+        break;
+      sll.remove((int)(ind));
+      break;
+    }
+    //set
+    case 7: {
+      Integer ind = numFromTextbox(4);
+      Integer val = numFromTextbox(5);
+      if (ind == null || ind >= sll.size() || val == null)
+        break;
+      sll.set(ind, val);
       break;
     }
     default:
@@ -257,18 +292,18 @@ void displaySll() {
 }
 void displaySllUI() {
   textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "add", 0));
+  userInput.add(new Button(100, 75, 50, 30, "add", 4));
   
   textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
   textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
-  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 1));
+  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 5));
   
   textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
-  userInput.add(new Button(550, 75, 50, 30, "remove", 2));
+  userInput.add(new Button(550, 75, 50, 30, "remove", 6));
   
   textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
   textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
-  userInput.add(new Button(800, 75, 50, 30, "set", 3));
+  userInput.add(new Button(800, 75, 50, 30, "set", 7));
   
   
 }
