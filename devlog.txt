@@ -67,7 +67,7 @@ Grace :: updated plan
 2017-05-23
 --------------------------------------------------------------
 Kenny :: added proposal
-Jasper :: work on text
+Jasper :: work on text, did UML, Flowchart
 ==============================================================
 
 2017-05-24
