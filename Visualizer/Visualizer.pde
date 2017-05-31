@@ -20,7 +20,7 @@ Stack<Integer> st;
 BST bt;
 
 void setup() {
-  size(850, 850);
+  size(850, 800);
   textAlign(CENTER, CENTER);
 
   //structures
@@ -134,6 +134,9 @@ void changeStructure(int actionID) {
     case 0:
       displayAlUI();
       break;
+    case 1: 
+      displaySllUI();
+       break;
   }
 }
 
@@ -210,19 +213,19 @@ void displayAl() {
 }
 
 void displayAlUI() {
-  textBoxes.add(new TextBox(0, 90, 100, 60, "value"));
-  userInput.add(new Button(100, 90, 50, 30, "add", 0));
+  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
+  userInput.add(new Button(100, 75, 50, 30, "add", 0));
   
-  textBoxes.add(new TextBox(150, 90, 100, 60, "index"));
-  textBoxes.add(new TextBox(250, 90, 100, 60, "value"));
-  userInput.add(new Button(350, 90, 100, 30, "add-at-index", 1));
+  textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
+  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 1));
   
-  textBoxes.add(new TextBox(450, 90, 100, 60, "index"));
-  userInput.add(new Button(550, 90, 50, 30, "remove", 2));
+  textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
+  userInput.add(new Button(550, 75, 50, 30, "remove", 2));
   
-  textBoxes.add(new TextBox(600, 90, 100, 60, "index"));
-  textBoxes.add(new TextBox(700, 90, 100, 60, "value"));
-  userInput.add(new Button(800, 90, 50, 30, "set", 3));
+  textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
+  userInput.add(new Button(800, 75, 50, 30, "set", 3));
   
   
 }
@@ -230,7 +233,7 @@ void displayAlUI() {
 //todo: use iterator
 void displaySll() {
   int x = 40;
-  int y = 100;
+  int y = 200;
   int size = 40;
   for (int i = 0; i < sll.size(); i++) {
     //draw node
@@ -251,6 +254,23 @@ void displaySll() {
       drawArrow(x + size / 2, y + size / 2, x + size * 2);
     x += size * 2;
   }
+}
+void displaySllUI() {
+  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
+  userInput.add(new Button(100, 75, 50, 30, "add", 0));
+  
+  textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
+  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 1));
+  
+  textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
+  userInput.add(new Button(550, 75, 50, 30, "remove", 2));
+  
+  textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
+  userInput.add(new Button(800, 75, 50, 30, "set", 3));
+  
+  
 }
 
 //draw cross with top-left (x1, y1) and bottom-right (x2, y2)
