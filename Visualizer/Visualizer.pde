@@ -155,7 +155,7 @@ void buttonAction(int actionID) {
     case 1: {
       Integer ind = numFromTextbox(1);
       Integer val = numFromTextbox(2);
-      if (ind == null || val == null)
+      if (ind == null || ind >= al.size() || val == null)
         break;
       al.add(ind, val);
       break;
@@ -163,7 +163,7 @@ void buttonAction(int actionID) {
     //remove 
     case 2: {
       Integer ind = numFromTextbox(3);
-      if (ind == null)
+      if (ind == null || ind >= al.size())
         break;
       al.remove((int)(ind));
       break;
@@ -172,7 +172,7 @@ void buttonAction(int actionID) {
     case 3: {
       Integer ind = numFromTextbox(4);
       Integer val = numFromTextbox(5);
-      if (ind == null || val == null)
+      if (ind == null || ind >= al.size() || val == null)
         break;
       al.set(ind, val);
       break;
