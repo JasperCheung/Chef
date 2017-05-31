@@ -142,50 +142,53 @@ void buttonAction(int actionID) {
     //arrayList
     //Add
     case 0: {
-      String text = textBoxes.get(0).text;
-      if (text.equals(""))
+      Integer num = numFromTextbox(0);
+      if (num == null)
         break;
-      int num = Integer.parseInt(text);
       al.add(num);
       break;
     }
     //add at index
     case 1: {
-      String text = textBoxes.get(1).text;
-      if (text.equals(""))
+      Integer ind = numFromTextbox(1);
+      Integer val = numFromTextbox(2);
+      if (ind == null || val == null)
         break;
-      int ind = Integer.parseInt(text);
-      text = textBoxes.get(2).text;
-      if (text.equals(""))
-        break;
-      int val = Integer.parseInt(text);
       al.add(ind, val);
       break;
     }
     //remove 
     case 2: {
-      String text = textBoxes.get(3).text;
-      if (text.equals(""))
+      Integer ind = numFromTextbox(3);
+      if (ind == null)
         break;
-      int ind = Integer.parseInt(text);
-      al.remove(ind);
+      al.remove((int)(ind));
       break;
     }
     //set
     case 3: {
-      String text = textBoxes.get(4).text;
-      if (text.equals(""))
+      Integer ind = numFromTextbox(4);
+      Integer val = numFromTextbox(5);
+      if (ind == null || val == null)
         break;
-      int ind = Integer.parseInt(text);
-      text = textBoxes.get(5).text;
-      if (text.equals(""))
-        break;
-      int val = Integer.parseInt(text); 
       al.set(ind, val);
       break;
     }
     default:
       System.out.println("Unknown actionID");
+  }
+}
+
+//return null if failure
+private Integer numFromTextbox(int numTextBox) {
+  String text = textBoxes.get(numTextBox).text;
+  if (text.equals(""))
+    return null;
+  // catch exception if text is not valid int (for now)
+  try {
+    return Integer.parseInt(text);
+  } catch (NumberFormatException e) {
+    return null;
   }
 }
 
