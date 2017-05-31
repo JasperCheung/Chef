@@ -1,0 +1,32 @@
+PLAN
+
+Most crucial job:
+- identifying how to create and display the data structures we plan to implement in Processing.
+- Figuring out how the user will input his/her elements of the data structures (mouse click, typing?)
+- How will the animations work?
+- What to do when the data structure goes past the boundaries of the visualizer?
+
+Core functionality components:
+- Accurate display of data structures
+- User input of data
+
+Nonessential components:
+- color
+- placement of objects
+- animation
+
+Prereq components:
+- Having the display of the structures down before doing algorithms
+
+Delegated tasks:
+- create methods to display the data structures
+- user interface work
+
+Collaboration tasks:
+- design
+
+TIMELINE:
+- start with getting an array displayed (simplest, we hope)
+- other data structures
+- handling user interface and user input
+- algorithms!!
