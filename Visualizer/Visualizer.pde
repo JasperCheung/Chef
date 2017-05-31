@@ -20,7 +20,7 @@ Stack<Integer> st;
 BST bt;
 
 void setup() {
-  size(700, 700);
+  size(850, 850);
   textAlign(CENTER, CENTER);
 
   //structures
@@ -140,6 +140,7 @@ void changeStructure(int actionID) {
 void buttonAction(int actionID) {
   switch(actionID) {
     //arrayList
+    //Add
     case 0: {
       String text = textBoxes.get(0).text;
       if (text.equals(""))
@@ -148,6 +149,7 @@ void buttonAction(int actionID) {
       al.add(num);
       break;
     }
+    //add at index
     case 1: {
       String text = textBoxes.get(1).text;
       if (text.equals(""))
@@ -160,12 +162,26 @@ void buttonAction(int actionID) {
       al.add(ind, val);
       break;
     }
+    //remove 
     case 2: {
       String text = textBoxes.get(3).text;
       if (text.equals(""))
         break;
       int ind = Integer.parseInt(text);
       al.remove(ind);
+      break;
+    }
+    //set
+    case 3: {
+      String text = textBoxes.get(4).text;
+      if (text.equals(""))
+        break;
+      int ind = Integer.parseInt(text);
+      text = textBoxes.get(5).text;
+      if (text.equals(""))
+        break;
+      int val = Integer.parseInt(text); 
+      al.set(ind, val);
       break;
     }
     default:
@@ -175,7 +191,7 @@ void buttonAction(int actionID) {
 
 void displayAl() {
   int x = 40;
-  int y = 100;
+  int y = 200;
   int size = 40;
   for (int i : al) {
     if( x + size > width){
@@ -191,15 +207,21 @@ void displayAl() {
 }
 
 void displayAlUI() {
-  textBoxes.add(new TextBox(0, 40, 100, 60, "value"));
-  userInput.add(new Button(100, 40, 50, 30, "add", 0));
+  textBoxes.add(new TextBox(0, 90, 100, 60, "value"));
+  userInput.add(new Button(100, 90, 50, 30, "add", 0));
   
-  textBoxes.add(new TextBox(150, 40, 100, 60, "index"));
-  textBoxes.add(new TextBox(250, 40, 100, 60, "value"));
-  userInput.add(new Button(350, 40, 100, 30, "add-at-index", 1));
+  textBoxes.add(new TextBox(150, 90, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, 90, 100, 60, "value"));
+  userInput.add(new Button(350, 90, 100, 30, "add-at-index", 1));
   
-  textBoxes.add(new TextBox(450, 40, 100, 60, "index"));
-  userInput.add(new Button(550, 40, 50, 30, "remove", 2));
+  textBoxes.add(new TextBox(450, 90, 100, 60, "index"));
+  userInput.add(new Button(550, 90, 50, 30, "remove", 2));
+  
+  textBoxes.add(new TextBox(600, 90, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, 90, 100, 60, "value"));
+  userInput.add(new Button(800, 90, 50, 30, "set", 3));
+  
+  
 }
 
 //todo: use iterator

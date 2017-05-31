@@ -1,7 +1,7 @@
 class Button {
   int x, y, len, wid;
   String text;
-  int actionID;
+  int actionID; //Used for button actions in Visualizer 
   
   Button(int initX, int initY, int initLen, int initWidth, String initText, int initActionID) {
     x = initX;
