@@ -12,8 +12,6 @@ class Button {
     actionID = initActionID;
   }
   
-  int getActionID() { return actionID; }
-  
   void display() {
     fill(200);
     rect(x, y, len, wid);

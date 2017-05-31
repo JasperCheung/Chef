@@ -95,11 +95,11 @@ void mousePressed() {
   for (Button b : structures) {
     //if pressed, do the action with the actionId
     if (b.contains(mouseX, mouseY))
-      changeStructure(b.getActionID());
+      changeStructure(b.actionID);
   }//BUTTON TEXT BOX
   for (Button b : userInput) {
     if (b.contains(mouseX, mouseY))
-      buttonAction(b.getActionID());
+      buttonAction(b.actionID);
   }
   //go through textboxes to change focus
   for (TextBox t : textBoxes) {
