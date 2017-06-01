@@ -46,6 +46,13 @@ void setup() {
   sll.add(2);
   sll.add(5);
   sll.add(13);
+  sll.add(9);
+  sll.add(10);
+  sll.add(88);
+  sll.add(90);
+  sll.add(70);
+  sll.add(60);
+  sll.add(000);
   dll = new LinkedList<Integer>();
   dll.add(7);
   dll.add(1);
@@ -282,12 +289,21 @@ void displaySll() {
     fill(255);
     rect(x, y, size, size);
     //draw cross if no next node
-    if (i == sll.size() - 1)
+    if (i == sll.size() - 1){
       drawCross(x, y, x + size, y + size);
+    }
     //else draw arrow to next node
-    else
-      drawArrow(x + size / 2, y + size / 2, x + size * 2);
-    x += size * 2;
+    else{
+      if( x + size * 2 > width){
+        drawArrowDiagonal(x+size/2, y+size/2, y + 130);
+        x = 40;
+        y = y + 140;
+      }
+      else{
+        drawArrow(x + size / 2, y + size / 2, x + size * 2);
+        x += size * 2;
+      }
+    }
   }
 }
 void displaySllUI() {
@@ -337,6 +353,15 @@ void drawArrowLeft(int x1, int y1, int x2, int y2){
   line(x1, y1, x1 + elevation, y1 + elevation);
   line(x1, y1, x1 + elevation, y1 - elevation);
   line(x1, y1, x2, y2);
+}
+
+void drawArrowDiagonal(int x1, int y1, int y2){
+  int elevation = 8;
+  //drawing the diagonal line
+  line(x1, y1, 40, y2);
+  //arrowhead
+  line(40, y2, 52, y2-8);
+  line(40, y2, 52, y2+8);
 }
 
 void displayDll() {
