@@ -13,7 +13,7 @@ class Button {
   }
   
   void display() {
-    fill(200);
+    fill(244, 196, 65);
     rect(x, y, len, wid);
     fill(0);
     text(text, x + len / 2, y + wid / 2);

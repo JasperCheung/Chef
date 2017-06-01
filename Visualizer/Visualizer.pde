@@ -33,11 +33,11 @@ void setup() {
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
-  
+
   //show arraylist as default
   dataStructure = -1;
   changeStructure(0);
-  
+
   al = new ArrayList<Integer>();
   al.add(3);
   al.add(6);
@@ -77,23 +77,24 @@ void draw() {
   for (Button b : userInput)
     b.display();
   switch(dataStructure) {
-    case 0:
-      displayAl();
-      break;
-    case 1:
-      displaySll();
-      break;
-    case 2:
-      displayDll();
-      break;
-    case 3:
-      displaySt();
-      break;
-    case 4:
-      displayBt();
-      break;
-    default:
-      System.out.println("Unknown dataStructure (ID)");
+  case 0:
+    displayAl();
+    break;
+  case 1:
+    displaySll();
+    break;
+  case 2:
+    displayDll();
+    break;
+  case 3:
+    displaySt();
+    break;
+  case 4:
+    displayBt();
+    break;
+    
+  default:
+    System.out.println("Unknown dataStructure (ID)");
   }
 }
 
@@ -138,12 +139,21 @@ void changeStructure(int actionID) {
   userInput.clear();
   //show new UI
   switch(dataStructure) {
-    case 0:
-      displayAlUI();
-      break;
-    case 1: 
-      displaySllUI();
-      break;
+  case 0:
+    displayAlUI();
+    break;
+  case 1: 
+    displaySllUI();
+    break;
+  case 2:
+    displayDllUI();
+    break;
+  case 3:
+    displayStUI();
+    break;
+  case 4: 
+    displayBtUI();
+    break;
   }
 }
 
@@ -151,7 +161,8 @@ void buttonAction(int actionID) {
   switch(actionID) {
     //arrayList
     //Add
-    case 0: {
+  case 0: 
+    {
       Integer num = numFromTextbox(0);
       if (num == null)
         break;
@@ -159,7 +170,8 @@ void buttonAction(int actionID) {
       break;
     }
     //add at index
-    case 1: {
+  case 1: 
+    {
       Integer ind = numFromTextbox(1);
       Integer val = numFromTextbox(2);
       if (ind == null || ind >= al.size() || val == null)
@@ -168,7 +180,8 @@ void buttonAction(int actionID) {
       break;
     }
     //remove 
-    case 2: {
+  case 2: 
+    {
       Integer ind = numFromTextbox(3);
       if (ind == null || ind >= al.size())
         break;
@@ -176,7 +189,8 @@ void buttonAction(int actionID) {
       break;
     }
     //set
-    case 3: {
+  case 3: 
+    {
       Integer ind = numFromTextbox(4);
       Integer val = numFromTextbox(5);
       if (ind == null || ind >= al.size() || val == null)
@@ -184,9 +198,10 @@ void buttonAction(int actionID) {
       al.set(ind, val);
       break;
     }
-    //singly-linked list
+    //singly-linked list 
     //add
-    case 4: {
+  case 4: 
+    {
       Integer num = numFromTextbox(0);
       if (num == null)
         break;
@@ -194,7 +209,8 @@ void buttonAction(int actionID) {
       break;
     }
     //add-at-index
-    case 5: {
+  case 5: 
+    {
       Integer ind = numFromTextbox(1);
       Integer val = numFromTextbox(2);
       if (ind == null || ind >= sll.size() || val == null)
@@ -203,7 +219,8 @@ void buttonAction(int actionID) {
       break;
     }
     //remove
-    case 6: {
+  case 6: 
+    {
       Integer ind = numFromTextbox(3);
       if (ind == null || ind >= sll.size())
         break;
@@ -211,16 +228,79 @@ void buttonAction(int actionID) {
       break;
     }
     //set
-    case 7: {
+  case 7: 
+    {
       Integer ind = numFromTextbox(4);
       Integer val = numFromTextbox(5);
       if (ind == null || ind >= sll.size() || val == null)
         break;
       sll.set(ind, val);
       break;
+    } 
+    //DLL
+    //add
+  case 8: 
+    {
+      Integer num = numFromTextbox(0);
+      if (num == null)
+        break;
+      dll.add(num);
+      break;
     }
-    default:
-      System.out.println("Unknown actionID");
+    //add-at-index
+  case 9: 
+    {
+      Integer ind = numFromTextbox(1);
+      Integer val = numFromTextbox(2);
+      if (ind == null || ind >= dll.size() || val == null)
+        break;
+      dll.add(ind, val);
+      break;
+    }
+    //remove
+  case 10: 
+    {
+      Integer ind = numFromTextbox(3);
+      if (ind == null || ind >= dll.size())
+        break;
+      dll.remove((int)(ind));
+      break;
+    }
+    //set
+  case 11: 
+    {
+      Integer ind = numFromTextbox(4);
+      Integer val = numFromTextbox(5);
+      if (ind == null || ind >= dll.size() || val == null)
+        break;
+      dll.set(ind, val);
+      break;
+    } 
+    //STACKS!!!
+    //push
+  case 12: 
+    {
+      Integer val = numFromTextbox(0);
+      if (val == null)
+        break;
+      st.push(val);
+      break;
+    }
+  case 13: {
+      st.pop();
+      break;
+    }
+  case 14: {
+    Integer val = numFromTextbox(0);
+      if (val == null)
+        break;
+    bt.insert(val);
+        break;
+        
+  }
+
+  default:
+    System.out.println("Unknown actionID");
   }
 }
 
@@ -232,7 +312,8 @@ private Integer numFromTextbox(int numTextBox) {
   // catch exception if text is not valid int (for now)
   try {
     return Integer.parseInt(text);
-  } catch (NumberFormatException e) {
+  } 
+  catch (NumberFormatException e) {
     return null;
   }
 }
@@ -242,7 +323,7 @@ void displayAl() {
   int y = 200;
   int size = 40;
   for (int i : al) {
-    if( x + size > width){
+    if ( x + size > width) {
       y+=60;
       x = 40;
     }
@@ -257,19 +338,17 @@ void displayAl() {
 void displayAlUI() {
   textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
   userInput.add(new Button(100, 75, 50, 30, "add", 0));
-  
+
   textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
   textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
   userInput.add(new Button(350, 75, 100, 30, "add-at-index", 1));
-  
+
   textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
   userInput.add(new Button(550, 75, 50, 30, "remove", 2));
-  
+
   textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
   textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
   userInput.add(new Button(800, 75, 50, 30, "set", 3));
-  
-  
 }
 
 //todo: use iterator
@@ -309,19 +388,17 @@ void displaySll() {
 void displaySllUI() {
   textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
   userInput.add(new Button(100, 75, 50, 30, "add", 4));
-  
+
   textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
   textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
   userInput.add(new Button(350, 75, 100, 30, "add-at-index", 5));
-  
+
   textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
   userInput.add(new Button(550, 75, 50, 30, "remove", 6));
-  
+
   textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
   textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
   userInput.add(new Button(800, 75, 50, 30, "set", 7));
-  
-  
 }
 
 //draw cross with top-left (x1, y1) and bottom-right (x2, y2)
@@ -339,7 +416,7 @@ void drawArrow(int x1, int y1, int x2) {
   line(x2, y1, x2 - elevation, y1 - elevation);
 }
 
-void drawArrowRight(int x1, int y1, int x2, int y2){
+void drawArrowRight(int x1, int y1, int x2, int y2) {
   int elevation = 8;
   line(x1, y1, x2, y2);
   //arrowhead
@@ -347,7 +424,7 @@ void drawArrowRight(int x1, int y1, int x2, int y2){
   line(x2, y1, x2 - elevation, y1 - elevation);
 }
 
-void drawArrowLeft(int x1, int y1, int x2, int y2){
+void drawArrowLeft(int x1, int y1, int x2, int y2) {
   int elevation = 8;
   //arrowhead
   line(x1, y1, x1 + elevation, y1 + elevation);
@@ -366,29 +443,44 @@ void drawArrowDiagonal(int x1, int y1, int y2){
 
 void displayDll() {
   int x = 40;
-  int y = 100;
+  int y = 200;
   int size = 40;
-  for (int i = 0; i < sll.size(); i++) {
+  for (int i = 0; i < dll.size(); i++) {
     //draw node
     //draw square holding value
     fill(255);
     rect(x, y, size, size); 
     fill(0);
-    text(sll.get(i), x + size / 2, y + size / 2);
+    text(dll.get(i), x + size / 2, y + size / 2);
     x += size;
     //draw square with link
     fill(255);
     rect(x, y, size, size);
     //draw cross if no next node
-    if (i == sll.size() - 1)
+    if (i == dll.size() - 1)
       drawCross(x, y, x + size, y + size);
     //else draw arrow to next node
-    else{
+    else {
       drawArrowRight(x + size / 2, y + 5 + size / 2, x + size * 2, y + 5 +size/ 2);
       drawArrowLeft(x + size / 2, y - 5 + size / 2, x + size * 2, y - 5 +size/2);
     }
     x += size * 2;
   }
+}
+void displayDllUI() {
+  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
+  userInput.add(new Button(100, 75, 50, 30, "add", 8));
+
+  textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
+  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 9));
+
+  textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
+  userInput.add(new Button(550, 75, 50, 30, "remove", 10));
+
+  textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
+  userInput.add(new Button(800, 75, 50, 30, "set", 11));
 }
 
 //draw boxes from the bottom to the top
@@ -405,6 +497,13 @@ void displaySt() {
     text(i, x + size / 2, y + size / 2);
     y -= size;
   }
+}
+
+void displayStUI() {
+  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
+  userInput.add(new Button(100, 75, 50, 30, "push", 12));
+
+  userInput.add(new Button(400, 75, 100, 100, "pop!!!", 13));
 }
 
 void displayBt() {
@@ -433,4 +532,12 @@ void displayBtNode(TreeNode tn, float x, float y, int size) {
     line(x + adjust, y + adjust, newX - adjust, newY - adjust);
     displayBtNode(tn.getRight(), newX, newY, size);
   }
+}
+
+  void displayBtUI() {
+  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
+  userInput.add(new Button(100, 75, 50, 30, "insert", 14));
+ 
+  userInput.add(new Button(550, 75, 200, 100, "DO THIS !!! remove", 15));
+
 }

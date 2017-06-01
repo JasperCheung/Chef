@@ -14,7 +14,7 @@ class TextBox {
   void display() {
     fill(255);
     rect(x, y, len, wid / 2);
-    fill(200);
+    fill(66, 134, 244);
     rect(x, y + wid / 2, len, wid / 2);
     fill(0);
     text(text, x + len / 2, y + wid / 4);
