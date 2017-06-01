@@ -286,19 +286,26 @@ void buttonAction(int actionID) {
       st.push(val);
       break;
     }
-  case 13: {
+  case 13:
+    if (!st.empty())
       st.pop();
-      break;
-    }
-  case 14: {
+    break;
+  case 14:
+    {
     Integer val = numFromTextbox(0);
+    if (val == null)
+      break;
+    bt.insert(val);
+    break;
+    }
+  case 15:
+    {
+      Integer val = numFromTextbox(1);
       if (val == null)
         break;
-    bt.insert(val);
-        break;
-        
-  }
-
+      bt.remove(val);
+      break;
+    }
   default:
     System.out.println("Unknown actionID");
   }
@@ -538,6 +545,7 @@ void displayBtNode(TreeNode tn, float x, float y, int size) {
   textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
   userInput.add(new Button(100, 75, 50, 30, "insert", 14));
  
-  userInput.add(new Button(550, 75, 200, 100, "DO THIS !!! remove", 15));
+  textBoxes.add(new TextBox(150, 75, 100, 60, "value"));
+  userInput.add(new Button(250, 75, 50, 30, "remove", 15));
 
 }
