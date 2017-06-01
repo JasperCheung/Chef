@@ -101,3 +101,10 @@ Kenny :: Better working UI for ArrayList
 Jasper :: Helped design UI
 Grace :: Worked on display for ArrayList - keep more elements on screen
 ==============================================================
+
+2017-05-30
+--------------------------------------------------------------
+Kenny :: 
+Jasper :: DLL, SLL, Stacks, Binary Tree UIs, Colors!
+Grace :: 
+==============================================================
