@@ -104,14 +104,14 @@ Grace :: Worked on display for ArrayList - keep more elements on screen
 
 2017-05-31
 --------------------------------------------------------------
-Kenny :: 
+Kenny :: made sll UI work
 Jasper :: DLL, SLL, Stacks, Binary Tree UIs, Colors!
 Grace :: fixed off screen cases for SLL
 ==============================================================
 
 2017-06-1
 --------------------------------------------------------------
-Kenny :: 
+Kenny :: add remove for bst UI, made better arrows
 Jasper :: added queues and deques
 Grace :: fixed off screen cases for DLL, fixed flow and plan
 ==============================================================
