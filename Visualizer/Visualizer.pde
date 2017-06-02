@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.ArrayDeque;
+
 
 ArrayList<Button> structures;
 ArrayList<TextBox> textBoxes;
@@ -18,6 +20,8 @@ LinkedList<Integer> dll;
 
 Stack<Integer> st;
 BST bt;
+ArrayDeque<Integer> que;
+ArrayDeque<Integer> dQue;
 
 void setup() {
   size(850, 800);
@@ -30,6 +34,8 @@ void setup() {
   structures.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   structures.add(new Button(350, 0, 60, 40, "Stack", 3));
   structures.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
+  structures.add(new Button(510,0,100,40, "Queue",5));
+  structures.add(new Button(610,0,100,40, "Deque",5));
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
@@ -66,6 +72,13 @@ void setup() {
   bt.insert(3);
   bt.insert(17);
   bt.insert(-3);
+  que = new ArrayDeque<Integer>();
+  que.addFirst(1);
+  que.addFirst(2);
+ // que.removeLast();
+  que.addFirst(3);
+  //que.removeFirst();
+  dQue = new ArrayDeque<Integer>();
 }
 
 void draw() {
@@ -91,6 +104,12 @@ void draw() {
     break;
   case 4:
     displayBt();
+    break;
+  case 5: 
+    displayQue();
+    break;
+  case 6:  
+    displayDque();
     break;
     
   default:
@@ -153,6 +172,12 @@ void changeStructure(int actionID) {
     break;
   case 4: 
     displayBtUI();
+    break;
+  case 5:
+    displayQueUI();
+    break;
+  case 6:
+    displayDqueUI();
     break;
   }
 }
@@ -305,6 +330,18 @@ void buttonAction(int actionID) {
         break;
       bt.remove(val);
       break;
+    }
+  case 16:
+    {
+      Integer val = numFromTextbox(0);
+      if(val == null)
+        break;
+        que.addFirst(val);
+        break;
+    }
+  case 17: 
+    {
+      que.removeLast();
     }
   default:
     System.out.println("Unknown actionID");
@@ -529,4 +566,31 @@ void displayBtNode(TreeNode tn, float x, float y, int size) {
   textBoxes.add(new TextBox(150, 75, 100, 60, "value"));
   userInput.add(new Button(250, 75, 50, 30, "remove", 15));
 
+}
+void displayQue(){
+ float x = width / 2;
+  float y = height - 100;
+  int size = 40;
+  for (int i : que) {
+    //draw box
+    fill(255);
+    rect(x, y, size, size);
+    //draw text
+    fill(0);
+    text(i, x + size / 2, y + size / 2);
+    y -= size;
+  }
+}
+void displayQueUI(){ 
+  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
+  userInput.add(new Button(100, 75, 50, 30, "add", 16));
+
+  userInput.add(new Button(400, 75, 100, 100, "remove", 17));
+  
+}
+
+void displayDque(){
+}
+
+void displayDqueUI(){
 }
