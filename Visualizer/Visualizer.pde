@@ -50,6 +50,7 @@ void setup() {
   algorithms = new ArrayList<Button>();
   algorithms.add(new Button(0, startYAlgo, 100, 40, "Bubble sort", 0));
   algorithms.add(new Button(100, startYAlgo, 100, 40, "Selection sort", 1));
+  steps = new ArrayList< ArrayList<Integer> >();
   
   //data structures
   //show arraylist as default
@@ -378,6 +379,41 @@ private Integer numFromTextbox(int numTextBox) {
 }
 
 void algorithmAction(int actionID) {
+  //put all the steps of the algorithm into steps
+  //deep copy elements into new arrayList
+  steps.clear();
+  switch(actionID) {
+  case 0:
+    bubbleSort();
+    break;
+  case 1:
+    selectionSort();
+    break;
+  default:
+    System.out.println("Unknown actionID");
+  }
+}
+
+//deep copy al into step
+void deepCopyStep() {
+  ArrayList<Integer> newAL = new ArrayList<Integer>();
+  for (int i : al)
+    newAL.add(i);
+  steps.add(newAL);
+}
+
+void bubbleSort() {
+  for (int pass = 1; pass < al.size(); pass++) {
+    for (int i = 0; i < al.size() - 1; i++) {
+      if (al.get(i) > al.get(i + 1)) {
+        al.set(i, al.set(i + 1, al.get(i)));
+        deepCopyStep();
+      }
+    }
+  }
+}
+
+void selectionSort() {
   
 }
 
