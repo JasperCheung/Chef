@@ -1,6 +1,6 @@
 void displayAl() {
   int x = 40;
-  int y = 200;
+  int y = 250;
   int size = 40;
   for (int i : al) {
     if ( x + size > width) {
@@ -29,4 +29,7 @@ void displayAlUI() {
   textBoxes.add(new TextBox(600, startYUI, 100, 60, "index"));
   textBoxes.add(new TextBox(700, startYUI, 100, 60, "value"));
   userInput.add(new Button(800, startYUI, 50, 30, "set", 3));
+  
+  algorithms.add(new Button(0, startYAlgo, 100, 40, "Bubble sort", 0));
+  algorithms.add(new Button(100, startYAlgo, 100, 40, "Selection sort", 1));
 }

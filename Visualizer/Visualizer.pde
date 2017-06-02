@@ -15,6 +15,8 @@ ArrayList<Button> userInput;
 
 ArrayList<Button> algorithms;
 ArrayList< ArrayList<Integer> > steps; //algorithms steps
+int step;
+ArrayList<Button> stepsUI;
 
 //Data structures
 //state for which data structure to display
@@ -48,9 +50,9 @@ void setup() {
   userInput = new ArrayList<Button>();
 
   algorithms = new ArrayList<Button>();
-  algorithms.add(new Button(0, startYAlgo, 100, 40, "Bubble sort", 0));
-  algorithms.add(new Button(100, startYAlgo, 100, 40, "Selection sort", 1));
   steps = new ArrayList< ArrayList<Integer> >();
+  
+  stepsUI = new ArrayList<Button>();
   
   //data structures
   //show arraylist as default
@@ -100,7 +102,9 @@ void draw() {
     b.display();
   for (Button b : algorithms)
     b.display();
-
+  for (Button b : stepsUI)
+    b.display();
+    
   switch(dataStructure) {
   case 0:
     displayAl();
@@ -140,15 +144,19 @@ void mousePressed() {
     if (b.contains(mouseX, mouseY))
       inputAction(b.actionID);
   }
+  for (Button b : algorithms) {
+    if (b.contains(mouseX, mouseY))
+      algorithmAction(b.actionID);
+  }
+  for (Button b : stepsUI) {
+    if (b.contains(mouseX, mouseY))
+      arrowAction(b.actionID);
+  }
   //go through textboxes to change focus
   for (TextBox t : textBoxes) {
     if (t.contains(mouseX, mouseY))
       focus = t;
   }
-  for (Button b : algorithms) {
-    if (b.contains(mouseX, mouseY))
-      algorithmAction(b.actionID);
-   }
 }
 
 void keyPressed() {
@@ -172,6 +180,8 @@ void changeStructure(int actionID) {
   textBoxes.clear();
   focus = null;
   userInput.clear();
+  algorithms.clear();
+  stepsUI.clear();
   //show new UI
   switch(dataStructure) {
   case 0:
@@ -382,6 +392,9 @@ void algorithmAction(int actionID) {
   //put all the steps of the algorithm into steps
   //deep copy elements into new arrayList
   steps.clear();
+  step = 0;
+  stepsUI.clear();
+  deepCopyStep();
   switch(actionID) {
   case 0:
     bubbleSort();
@@ -391,7 +404,13 @@ void algorithmAction(int actionID) {
     break;
   default:
     System.out.println("Unknown actionID");
+    return;
   }
+  al = steps.get(0);
+  stepsUI.add(new Button(0, startYAlgo + 50, 20, 40, "<-", 0));
+  stepsUI.add(new Button(80, startYAlgo + 50, 20, 40, "->", 1));
+  String s = (step + 1) + " / " + steps.size();
+  stepsUI.add(new Button(25, startYAlgo + 50, 50, 40, s, -1));
 }
 
 //deep copy al into step
@@ -400,6 +419,21 @@ void deepCopyStep() {
   for (int i : al)
     newAL.add(i);
   steps.add(newAL);
+}
+
+void arrowAction(int actionID) {
+  if (actionID == -1)
+    return;
+  if (actionID == 0) {
+    if (step > 0)
+      step--;
+  } else {
+    if (step < steps.size() - 1)
+      step++;
+  }
+  al = steps.get(step);
+  String s = (step + 1) + " / " + steps.size();
+  stepsUI.get(2).text = s;
 }
 
 void bubbleSort() {
