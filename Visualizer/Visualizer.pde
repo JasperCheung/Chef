@@ -3,12 +3,20 @@ import java.util.LinkedList;
 import java.util.Stack;
 import java.util.ArrayDeque;
 
+//User interface
+int startYUI = 55;
+int startYAlgo = 130;
+
 ArrayList<Button> structures;
 ArrayList<TextBox> textBoxes;
 //textBox to edit when keys are pressed
 TextBox focus;
 ArrayList<Button> userInput;
 
+ArrayList<Button> algorithms;
+ArrayList< ArrayList<Integer> > steps; //algorithms steps
+
+//Data structures
 //state for which data structure to display
 int dataStructure;
 
@@ -21,8 +29,6 @@ Stack<Integer> st;
 BST bt;
 ArrayDeque<Integer> que;
 ArrayDeque<Integer> dQue;
-
-int startYUI = 55;
 
 void setup() {
   size(850, 800);
@@ -41,6 +47,11 @@ void setup() {
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
 
+  algorithms = new ArrayList<Button>();
+  algorithms.add(new Button(0, startYAlgo, 100, 40, "Bubble sort", 0));
+  algorithms.add(new Button(100, startYAlgo, 100, 40, "Selection sort", 1));
+  
+  //data structures
   //show arraylist as default
   dataStructure = -1;
   changeStructure(0);
@@ -86,6 +97,9 @@ void draw() {
     t.display();
   for (Button b : userInput)
     b.display();
+  for (Button b : algorithms)
+    b.display();
+
   switch(dataStructure) {
   case 0:
     displayAl();
@@ -123,13 +137,17 @@ void mousePressed() {
   }//BUTTON TEXT BOX
   for (Button b : userInput) {
     if (b.contains(mouseX, mouseY))
-      buttonAction(b.actionID);
+      inputAction(b.actionID);
   }
   //go through textboxes to change focus
   for (TextBox t : textBoxes) {
     if (t.contains(mouseX, mouseY))
       focus = t;
   }
+  for (Button b : algorithms) {
+    if (b.contains(mouseX, mouseY))
+      algorithmAction(b.actionID);
+   }
 }
 
 void keyPressed() {
@@ -179,7 +197,7 @@ void changeStructure(int actionID) {
   }
 }
 
-void buttonAction(int actionID) {
+void inputAction(int actionID) {
   switch(actionID) {
     //arrayList
     //Add
@@ -357,6 +375,10 @@ private Integer numFromTextbox(int numTextBox) {
   catch (NumberFormatException e) {
     return null;
   }
+}
+
+void algorithmAction(int actionID) {
+  
 }
 
 void displayDque(){
