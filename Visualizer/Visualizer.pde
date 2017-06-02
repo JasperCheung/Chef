@@ -23,6 +23,8 @@ BST bt;
 ArrayDeque<Integer> que;
 ArrayDeque<Integer> dQue;
 
+int startYUI = 55;
+
 void setup() {
   size(850, 800);
   textAlign(CENTER, CENTER);
@@ -380,19 +382,19 @@ void displayAl() {
 }
 
 void displayAlUI() {
-  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "add", 0));
+  textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
+  userInput.add(new Button(100, startYUI, 50, 30, "add", 0));
 
-  textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
-  textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
-  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 1));
+  textBoxes.add(new TextBox(150, startYUI, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, startYUI, 100, 60, "value"));
+  userInput.add(new Button(350, startYUI, 100, 30, "add-at-index", 1));
 
-  textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
-  userInput.add(new Button(550, 75, 50, 30, "remove", 2));
+  textBoxes.add(new TextBox(450, startYUI, 100, 60, "index"));
+  userInput.add(new Button(550, startYUI, 50, 30, "remove", 2));
 
-  textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
-  textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
-  userInput.add(new Button(800, 75, 50, 30, "set", 3));
+  textBoxes.add(new TextBox(600, startYUI, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, startYUI, 100, 60, "value"));
+  userInput.add(new Button(800, startYUI, 50, 30, "set", 3));
 }
 
 //todo: use iterator
@@ -430,19 +432,19 @@ void displaySll() {
   }
 }
 void displaySllUI() {
-  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "add", 4));
+  textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
+  userInput.add(new Button(100, startYUI, 50, 30, "add", 4));
 
-  textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
-  textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
-  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 5));
+  textBoxes.add(new TextBox(150, startYUI, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, startYUI, 100, 60, "value"));
+  userInput.add(new Button(350, startYUI, 100, 30, "add-at-index", 5));
 
-  textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
-  userInput.add(new Button(550, 75, 50, 30, "remove", 6));
+  textBoxes.add(new TextBox(450, startYUI, 100, 60, "index"));
+  userInput.add(new Button(550, startYUI, 50, 30, "remove", 6));
 
-  textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
-  textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
-  userInput.add(new Button(800, 75, 50, 30, "set", 7));
+  textBoxes.add(new TextBox(600, startYUI, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, startYUI, 100, 60, "value"));
+  userInput.add(new Button(800, startYUI, 50, 30, "set", 7));
 }
 
 //draw cross with top-left (x1, y1) and bottom-right (x2, y2)
@@ -502,19 +504,19 @@ void displayDll() {
   }
 }
 void displayDllUI() {
-  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "add", 8));
+  textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
+  userInput.add(new Button(100, startYUI, 50, 30, "add", 8));
 
-  textBoxes.add(new TextBox(150, 75, 100, 60, "index"));
-  textBoxes.add(new TextBox(250, 75, 100, 60, "value"));
-  userInput.add(new Button(350, 75, 100, 30, "add-at-index", 9));
+  textBoxes.add(new TextBox(150, startYUI, 100, 60, "index"));
+  textBoxes.add(new TextBox(250, startYUI, 100, 60, "value"));
+  userInput.add(new Button(350, startYUI, 100, 30, "add-at-index", 9));
 
-  textBoxes.add(new TextBox(450, 75, 100, 60, "index"));
-  userInput.add(new Button(550, 75, 50, 30, "remove", 10));
+  textBoxes.add(new TextBox(450, startYUI, 100, 60, "index"));
+  userInput.add(new Button(550, startYUI, 50, 30, "remove", 10));
 
-  textBoxes.add(new TextBox(600, 75, 100, 60, "index"));
-  textBoxes.add(new TextBox(700, 75, 100, 60, "value"));
-  userInput.add(new Button(800, 75, 50, 30, "set", 11));
+  textBoxes.add(new TextBox(600, startYUI, 100, 60, "index"));
+  textBoxes.add(new TextBox(700, startYUI, 100, 60, "value"));
+  userInput.add(new Button(800, startYUI, 50, 30, "set", 11));
 }
 
 //draw boxes from the bottom to the top
@@ -534,10 +536,10 @@ void displaySt() {
 }
 
 void displayStUI() {
-  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "push", 12));
+  textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
+  userInput.add(new Button(100, startYUI, 50, 30, "push", 12));
 
-  userInput.add(new Button(400, 75, 100, 100, "pop!!!", 13));
+  userInput.add(new Button(400, startYUI, 100, 100, "pop!!!", 13));
 }
 
 void displayBt() {
@@ -569,11 +571,11 @@ void displayBtNode(TreeNode tn, float x, float y, int size) {
 }
 
   void displayBtUI() {
-  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "insert", 14));
+  textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
+  userInput.add(new Button(100, startYUI, 50, 30, "insert", 14));
  
-  textBoxes.add(new TextBox(150, 75, 100, 60, "value"));
-  userInput.add(new Button(250, 75, 50, 30, "remove", 15));
+  textBoxes.add(new TextBox(150, startYUI, 100, 60, "value"));
+  userInput.add(new Button(250, startYUI, 50, 30, "remove", 15));
 
 }
 void displayQue(){
@@ -591,10 +593,10 @@ void displayQue(){
   }
 }
 void displayQueUI(){ 
-  textBoxes.add(new TextBox(0, 75, 100, 60, "value"));
-  userInput.add(new Button(100, 75, 50, 30, "add", 16));
+  textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
+  userInput.add(new Button(100, startYUI, 50, 30, "add", 16));
 
-  userInput.add(new Button(400, 75, 100, 100, "remove", 17));
+  userInput.add(new Button(400, startYUI, 100, 100, "remove", 17));
   
 }
 
