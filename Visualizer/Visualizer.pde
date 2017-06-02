@@ -481,15 +481,24 @@ void displayDll() {
     fill(255);
     rect(x, y, size, size);
     //draw cross if no next node
-    if (i == dll.size() - 1)
+    if (i == dll.size() - 1){
       drawCross(x, y, x + size, y + size);
+    }
     //else draw arrow to next node
     else {
-      int heightDif = 6;
-      drawArrow(x + size / 2, y + size / 2 - heightDif, x + size * 2, y + size / 2 - heightDif);
-      drawArrow(x + size * 2, y + size / 2 + heightDif, x + size / 2, y + size / 2 + heightDif);
+      if( x + size * 2 < width){
+        int heightDif = 6;
+        drawArrow(x + size / 2, y + size / 2 - heightDif, x + size * 2, y + size / 2 - heightDif);
+        drawArrow(x + size * 2, y + size / 2 + heightDif, x + size / 2, y + size / 2 + heightDif);
+        x += size * 2;
+      }
+      else{
+        drawArrow(x + size / 2 , y + size / 2, 40 + size - 20, y + 130);
+        drawArrow(40 + size, y+ 138, x + size, y + size/2);
+        x = 40;
+        y = y + 140;
+      }
     }
-    x += size * 2;
   }
 }
 void displayDllUI() {

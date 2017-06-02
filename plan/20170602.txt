@@ -1,0 +1,29 @@
+PLAN
+
+Most crucial job:
+- Adding algorithms 
+
+Core functionality components:
+- Accurate display of data structures
+- User input of data
+
+Nonessential components:
+- color
+- placement of objects
+- animation
+
+Prereq components:
+- Having the display of the structures down before doing algorithms (check)
+
+Delegated tasks:
+- create methods to display the data structures
+- user interface work
+
+Collaboration tasks:
+- design/ UI
+
+TIMELINE:
+- start with getting an array displayed (simplest, we hope)
+- other data structures
+- handling user interface and user input
+- algorithms!!
