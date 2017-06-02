@@ -54,6 +54,10 @@ void displayDll() {
   int size = 40;
   for (int i = 0; i < dll.size(); i++) {
     //draw node
+    fill(255);
+    rect(x, y, size, size);
+    fill(0);
+    x+=size;
     //draw square holding value
     fill(255);
     rect(x, y, size, size); 
@@ -69,7 +73,7 @@ void displayDll() {
     }
     //else draw arrow to next node
     else {
-      if( x + size * 2 < width){
+      if( x + size * 3 < width){
         int heightDif = 6;
         drawArrow(x + size / 2, y + size / 2 - heightDif, x + size * 2, y + size / 2 - heightDif);
         drawArrow(x + size * 2, y + size / 2 + heightDif, x + size / 2, y + size / 2 + heightDif);
