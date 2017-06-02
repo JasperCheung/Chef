@@ -56,6 +56,9 @@ void displayDll() {
     //draw node
     fill(255);
     rect(x, y, size, size);
+    if( i == 0 ){
+      drawCross(x,y,x+size,y+size);
+    }
     fill(0);
     x+=size;
     //draw square holding value
