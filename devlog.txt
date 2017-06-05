@@ -115,4 +115,10 @@ Kenny :: add remove for bst UI, made better arrows
 Jasper :: added queues and deques
 Grace :: fixed off screen cases for DLL, fixed flow and plan
 ==============================================================
+2017-06-4
+--------------------------------------------------------------
+Kenny ::
+Jasper :: Changed Queue and Finished Implementing Deque
+Grace :: 
+==============================================================
 
