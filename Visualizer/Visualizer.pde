@@ -489,5 +489,15 @@ void bubbleSort() {
 }
 
 void selectionSort() {
-  
+  //index of value with greatest value
+  int maxPos;
+  for (int pass = al.size() - 1; pass > 0; pass--) {
+    maxPos = 0;
+    for (int i = 1; i <= pass; i++) {
+      if (al.get(i) > al.get(maxPos))
+        maxPos = i;
+    }
+    al.set(maxPos, al.set(pass, al.get(maxPos)));
+    deepCopyStep();
+  }
 }
