@@ -44,7 +44,7 @@ void setup() {
   structures.add(new Button(350, 0, 60, 40, "Stack", 3));
   structures.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
   structures.add(new Button(510,0,100,40, "Queue",5));
-  structures.add(new Button(610,0,100,40, "Deque",5));
+  structures.add(new Button(610,0,100,40, "Deque",6));
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
@@ -84,12 +84,15 @@ void setup() {
   bt.insert(17);
   bt.insert(-3);
   que = new ArrayDeque<Integer>();
-  que.addFirst(1);
-  que.addFirst(2);
- // que.removeLast();
-  que.addFirst(3);
+  que.addLast(1);
+  que.addLast(2);
+  que.addLast(3);
   //que.removeFirst();
   dQue = new ArrayDeque<Integer>();
+  dQue.addFirst(3);
+  dQue.addFirst(4);
+  dQue.addLast(1);
+  
 }
 
 void draw() {
@@ -362,12 +365,48 @@ void inputAction(int actionID) {
       Integer val = numFromTextbox(0);
       if(val == null)
         break;
-        que.addFirst(val);
+        que.addLast(val);
         break;
     }
   case 17: 
     {
-      que.removeLast();
+      if(!que.isEmpty())
+        que.removeFirst();
+      break;
+    }
+  //DEQUES
+  //push
+  case 18:
+    {
+      Integer val = numFromTextbox(0);
+      if (val == null)
+        break;
+      dQue.addFirst(val);
+      break;
+      
+    }
+  //pop
+  case 19:
+    {
+       if(!dQue.isEmpty())
+        dQue.removeFirst();
+      break;
+      
+    }
+  case 20:
+    { 
+      Integer val = numFromTextbox(1);
+      if (val == null)
+        break;
+      dQue.addLast(val);
+      break;
+    }
+  case 21:
+    {
+       if(!dQue.isEmpty())
+        dQue.removeFirst();
+      break;
+      
     }
   default:
     System.out.println("Unknown actionID");
@@ -449,10 +488,4 @@ void bubbleSort() {
 
 void selectionSort() {
   
-}
-
-void displayDque(){
-}
-
-void displayDqueUI(){
 }
