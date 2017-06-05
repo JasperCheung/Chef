@@ -144,8 +144,10 @@ void mousePressed() {
       changeStructure(b.actionID);
   }//BUTTON TEXT BOX
   for (Button b : userInput) {
-    if (b.contains(mouseX, mouseY))
+    if (b.contains(mouseX, mouseY)) {
       inputAction(b.actionID);
+      stepsUI.clear();
+    }
   }
   for (Button b : algorithms) {
     if (b.contains(mouseX, mouseY))
