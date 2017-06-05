@@ -404,7 +404,7 @@ void inputAction(int actionID) {
   case 21:
     {
        if(!dQue.isEmpty())
-        dQue.removeFirst();
+        dQue.removeLast ();
       break;
       
     }

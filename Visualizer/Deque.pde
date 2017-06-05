@@ -21,9 +21,9 @@ void displayDqueUI(){
   textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
   userInput.add(new Button(100, startYUI, 50, 30, "push", 18));
 
-  userInput.add(new Button(160, startYUI, 50, 30, "pop", 19)); 
-  textBoxes.add(new TextBox(220, startYUI, 100, 60, "value"));
-  userInput.add(new Button(320, startYUI, 60, 30, "Enqueue", 20));
+  userInput.add(new Button(160, startYUI, 100, 30, "Remove First", 19)); 
+  textBoxes.add(new TextBox(270, startYUI, 100, 60, "value"));
+  userInput.add(new Button(380, startYUI, 60, 30, "Enqueue", 20));
 
-  userInput.add(new Button(390 , startYUI, 60, 30, "Dequeue", 21));
+  userInput.add(new Button(450 , startYUI, 100, 30, "Remove Last", 21));
 }
