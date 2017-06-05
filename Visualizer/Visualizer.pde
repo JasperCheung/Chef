@@ -443,6 +443,9 @@ void algorithmAction(int actionID) {
   case 1:
     selectionSort();
     break;
+  case 2:
+    insertionSort();
+    break;
   default:
     System.out.println("Unknown actionID");
     return;
@@ -499,5 +502,17 @@ void selectionSort() {
     }
     al.set(maxPos, al.set(pass, al.get(maxPos)));
     deepCopyStep();
+  }
+}
+
+void insertionSort() {
+  for (int part = 1; part < al.size(); part++) {
+    for (int i = part; i > 0; i--) {
+      if (al.get(i) < al.get(i - 1)) {
+        al.set(i, al.set(i - 1, al.get(i)));
+        deepCopyStep();
+      } else
+        break;
+    }
   }
 }

@@ -32,4 +32,5 @@ void displayAlUI() {
   
   algorithms.add(new Button(0, startYAlgo, 100, 40, "Bubble sort", 0));
   algorithms.add(new Button(100, startYAlgo, 100, 40, "Selection sort", 1));
+  algorithms.add(new Button(200, startYAlgo, 100, 40, "Insertion sort", 2));
 }
