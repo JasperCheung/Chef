@@ -173,6 +173,8 @@ void keyPressed() {
     if (!text.equals(""))
       focus.text = text.substring(0, text.length() - 1);
   }
+  if (key == '-' && focus.text.length() == 0)
+    focus.text += key;
 }
 
 void changeStructure(int actionID) {
@@ -228,7 +230,7 @@ void inputAction(int actionID) {
     {
       Integer ind = numFromTextbox(1);
       Integer val = numFromTextbox(2);
-      if (ind == null || ind >= al.size() || val == null)
+      if (ind == null || ind < 0 || ind >= al.size() || val == null)
         break;
       al.add(ind, val);
       break;
@@ -237,7 +239,7 @@ void inputAction(int actionID) {
   case 2: 
     {
       Integer ind = numFromTextbox(3);
-      if (ind == null || ind >= al.size())
+      if (ind == null || ind < 0 || ind >= al.size())
         break;
       al.remove((int)(ind));
       break;
@@ -247,7 +249,7 @@ void inputAction(int actionID) {
     {
       Integer ind = numFromTextbox(4);
       Integer val = numFromTextbox(5);
-      if (ind == null || ind >= al.size() || val == null)
+      if (ind == null || ind < 0 || ind >= al.size() || val == null)
         break;
       al.set(ind, val);
       break;
@@ -267,7 +269,7 @@ void inputAction(int actionID) {
     {
       Integer ind = numFromTextbox(1);
       Integer val = numFromTextbox(2);
-      if (ind == null || ind >= sll.size() || val == null)
+      if (ind == null || ind < 0 || ind >= sll.size() || val == null)
         break;
       sll.add(ind, val);
       break;
@@ -276,7 +278,7 @@ void inputAction(int actionID) {
   case 6: 
     {
       Integer ind = numFromTextbox(3);
-      if (ind == null || ind >= sll.size())
+      if (ind == null || ind < 0 || ind >= sll.size())
         break;
       sll.remove((int)(ind));
       break;
@@ -286,7 +288,7 @@ void inputAction(int actionID) {
     {
       Integer ind = numFromTextbox(4);
       Integer val = numFromTextbox(5);
-      if (ind == null || ind >= sll.size() || val == null)
+      if (ind == null || ind < 0 || ind >= sll.size() || val == null)
         break;
       sll.set(ind, val);
       break;
@@ -306,7 +308,7 @@ void inputAction(int actionID) {
     {
       Integer ind = numFromTextbox(1);
       Integer val = numFromTextbox(2);
-      if (ind == null || ind >= dll.size() || val == null)
+      if (ind == null || ind < 0 || ind >= dll.size() || val == null)
         break;
       dll.add(ind, val);
       break;
@@ -315,7 +317,7 @@ void inputAction(int actionID) {
   case 10: 
     {
       Integer ind = numFromTextbox(3);
-      if (ind == null || ind >= dll.size())
+      if (ind == null || ind < 0 || ind >= dll.size())
         break;
       dll.remove((int)(ind));
       break;
@@ -325,7 +327,7 @@ void inputAction(int actionID) {
     {
       Integer ind = numFromTextbox(4);
       Integer val = numFromTextbox(5);
-      if (ind == null || ind >= dll.size() || val == null)
+      if (ind == null || ind < 0 || ind >= dll.size() || val == null)
         break;
       dll.set(ind, val);
       break;
