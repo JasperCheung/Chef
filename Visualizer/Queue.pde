@@ -1,6 +1,6 @@
 void displayQue(){
  int x = 40;
-  int y = 250;
+  int y = 200;
   int size = 40;
   for (int i : que) {
     if ( x + size > width) {
