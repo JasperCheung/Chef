@@ -421,6 +421,25 @@ void inputAction(int actionID) {
       break;
       
     }
+  //min heap
+  //add
+  case 22:
+    {
+      Integer val = numFromTextbox(0);
+      if (val == null)
+        break;
+      minHp.add(val);
+      break;
+      
+    }
+  //removeMin
+  case 23:
+    {
+       if(!minHp.isEmpty())
+        minHp.removeMin();
+      break;
+      
+    }
   default:
     System.out.println("Unknown actionID");
   }
