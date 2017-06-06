@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ALHeap 
 {
     //instance vars
-    private ArrayList<Integer> _heap; //underlying container is array of Integers
+    public ArrayList<Integer> _heap; //underlying container is array of Integers
 
     /*****************************************************
      * default constructor  ---  inits empty heap

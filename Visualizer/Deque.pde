@@ -1,6 +1,7 @@
 void displayDque(){
+ 
  int x = 40;
-  int y = 200;
+  int y = 250;
   int size = 40;
   for (int i : dQue) {
     if ( x + size > width) {

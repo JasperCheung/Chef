@@ -34,13 +34,9 @@ float calculateX(int layer, int i) {
   return width * (i + 1) / ( pow(2, layer) + 1);
 }
 
-void displayBtUI() {
+  void displayBtUI() {
   textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
   userInput.add(new Button(100, startYUI, 50, 30, "insert", 14));
   textBoxes.add(new TextBox(150, startYUI, 100, 60, "value"));
   userInput.add(new Button(250, startYUI, 50, 30, "remove", 15));
-  
-  algorithms.add(new Button(650, startYUI, 125, 30, "pre-order traversal", 3));
-  algorithms.add(new Button(650, startYUI + 30, 125, 30, "in-order traversal", 4));
-  algorithms.add(new Button(650, startYUI + 60, 125, 30, "post-order traversal", 5));
 }

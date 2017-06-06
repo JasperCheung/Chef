@@ -95,6 +95,7 @@ void setup() {
   dQue.addFirst(3);
   dQue.addFirst(4);
   dQue.addLast(1);
+  minHp = new ALHeap();
   
 }
 
@@ -476,15 +477,6 @@ void algorithmAction(int actionID) {
   case 2:
     insertionSort();
     break;
-  case 3:
-    bt.preOrderTrav();
-    return;
-  case 4:
-    bt.inOrderTrav();
-    return;
-  case 5:
-    bt.postOrderTrav();
-    return;
   default:
     System.out.println("Unknown actionID");
     return;
