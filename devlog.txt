@@ -121,4 +121,10 @@ Kenny ::
 Jasper :: Changed Queue and Finished Implementing Deque
 Grace :: 
 ==============================================================
+2017-06-5
+--------------------------------------------------------------
+Kenny ::
+Jasper :: Changed Queue and Finished Implementing Deque
+Grace :: 
+==============================================================
 
