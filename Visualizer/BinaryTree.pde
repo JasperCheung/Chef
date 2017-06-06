@@ -1,30 +1,37 @@
-float w = 3.5;
+//split evenly the space between all nodes of a particular layer
 void displayBt() {
-  float x = width / 2;
+  int layer = 0;
+  //position for that layer (starting at 0)
+  int i = 0;
+  
   float y = 100;
   int size = 40;
-  displayBtNode(bt.getRoot(), x, y, size, w);
+  displayBtNode(bt.getRoot(), layer, i, y, size);
 }
-void displayBtNode(TreeNode tn, float x, float y, int size, float ww) {
+void displayBtNode(TreeNode tn, int layer, int i, float y, int size) {
   if (tn == null)
     return;
+  float x = calculateX(layer, i);
+  if (tn.getLeft() != null) {
+    float newX = calculateX(layer + 1, 2 * i);
+    float newY = y + size * 1.5;
+    line(x, y, newX, newY); 
+    displayBtNode(tn.getLeft(), layer + 1, 2 * i, newY, size);
+  }
+  if (tn.getRight() != null) {
+    float newX = calculateX(layer + 1, 2 * i + 1);
+    float newY = y + size * 1.5;
+    line(x, y, newX, newY);
+    displayBtNode(tn.getRight(), layer + 1, 2 * i + 1, newY, size);
+  }
   fill(255);
   ellipse(x, y, size, size);
   fill(0);
   text(tn.getValue(), x, y);
-  float adjust = (size / 2) / sqrt(2); //go the border of circle
-  if (tn.getLeft() != null) {
-    float newX = x - size*ww;
-    float newY = y + size * 1.5;
-    line(x - adjust, y + adjust, newX + adjust, newY - adjust); 
-    displayBtNode(tn.getLeft(), newX, newY, size, ww-1.2);
-  }
-  if (tn.getRight() != null) {
-    float newX = x + size*ww;
-    float newY = y + size * 1.5;
-    line(x + adjust, y + adjust, newX - adjust, newY - adjust);
-    displayBtNode(tn.getRight(), newX, newY, size, ww-1.2);
-  }
+}
+//return the x value for corresponding layer and position for that layer
+float calculateX(int layer, int i) {
+  return width * (i + 1) / ( pow(2, layer) + 1);
 }
 
   void displayBtUI() {
