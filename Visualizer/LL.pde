@@ -52,6 +52,9 @@ void displayDll() {
   int x = 40;
   int y = 200;
   int size = 40;
+  int oldX = x;
+  int oldY = y;
+  int heightDif = 6;
   for (int i = 0; i < dll.size(); i++) {
     //draw node
     fill(255);
@@ -70,6 +73,12 @@ void displayDll() {
     //draw square with link
     fill(255);
     rect(x, y, size, size);
+    if( i != 0 && oldY == y){
+      drawArrow(oldX + size * 2 + 20, y + size / 2 + heightDif, oldX + size / 2 + 20, y + size / 2 + heightDif);
+    }
+    if( i != 0 && y > oldY){
+      drawArrow(50, y+20, oldX+170, oldY+45);
+    }
     //draw cross if no next node
     if (i == dll.size() - 1){
       drawCross(x, y, x + size, y + size);
@@ -77,15 +86,15 @@ void displayDll() {
     //else draw arrow to next node
     else {
       if( x + size * 3 < width){
-        int heightDif = 6;
         drawArrow(x + size / 2, y + size / 2 - heightDif, x + size * 2, y + size / 2 - heightDif);
-        drawArrow(x + size * 2, y + size / 2 + heightDif, x + size / 2, y + size / 2 + heightDif);
+        oldX = x;
+        oldY = y;
         x += size * 2;
       }
       else{
-        drawArrow(x + size / 2 , y + size / 2, 40 + size - 20, y + 130);
-        drawArrow(40 + size, y+ 138, x + size, y + size/2);
+        drawArrow(x + size / 2, y + size / 2, 40 + size - 20, y + 130);
         x = 40;
+        oldY = y;
         y = y + 140;
       }
     }
