@@ -32,6 +32,8 @@ BST bt;
 ArrayDeque<Integer> que;
 ArrayDeque<Integer> dQue;
 
+ALHeap minHp;
+
 void setup() {
   size(850, 800);
   textAlign(CENTER, CENTER);
@@ -45,6 +47,7 @@ void setup() {
   structures.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
   structures.add(new Button(510,0,100,40, "Queue",5));
   structures.add(new Button(610,0,100,40, "Deque",6));
+  structures.add(new Button(710,0,100,40, "Min Heap",7));
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
@@ -130,7 +133,9 @@ void draw() {
   case 6:  
     displayDque();
     break;
-    
+  case 7: 
+    displayMinHp();
+    break;
   default:
     System.out.println("Unknown dataStructure (ID)");
   }
@@ -211,6 +216,9 @@ void changeStructure(int actionID) {
     break;
   case 6:
     displayDqueUI();
+    break;
+  case 7:
+    displayMinHpUI();
     break;
   }
 }
@@ -351,8 +359,9 @@ void inputAction(int actionID) {
   case 14:
     {
     Integer val = numFromTextbox(0);
-    if (val == null)
-      break;
+    if ( ( val == null ) || ( bt.search(val) != null ) ){
+      System.out.print( " Can only insert integers not on the tree already " );
+      break;}
     bt.insert(val);
     break;
     }
