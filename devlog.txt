@@ -19,8 +19,10 @@ UNRESOLVED ISSUES
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PROCESSING
 Making one's own widgets in Processing isn't too painful.
 But coding the interaction can be quite messy.
+(Splitting the code into individual tabs made things a lot cleaner).
 
 
 MID-DEVELOPMENT DESIGN CHANGES
@@ -29,6 +31,7 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If ya don’t understand something, ask.
 
 
  ______   ______   __   __   __       ______   _______     
@@ -112,7 +115,7 @@ Jasper :: DLL, SLL, Stacks, Binary Tree UIs, Colors!
 Grace :: fixed off screen cases for SLL
 ==============================================================
 
-2017-06-1
+2017-06-01
 --------------------------------------------------------------
 Kenny :: add remove for bst UI, made better arrows
 Jasper :: added queues and deques
