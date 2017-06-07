@@ -10,7 +10,7 @@ Java Visualizer
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Created a workable User Interface.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,6 +18,8 @@ UNRESOLVED ISSUES
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Making one's own widgets in Processing isn't too painful.
+But coding the interaction can be quite messy.
 
 
 MID-DEVELOPMENT DESIGN CHANGES
@@ -115,23 +117,28 @@ Kenny :: add remove for bst UI, made better arrows
 Jasper :: added queues and deques
 Grace :: fixed off screen cases for DLL, fixed flow and plan
 ==============================================================
+
+2017-06-2
+--------------------------------------------------------------
+Kenny :: prepare for algorithm UI, add bubbleSort
+Grace :: split data structures to own files, better DLL display
+==============================================================
+
 2017-06-4
 --------------------------------------------------------------
-Kenny ::
 Jasper :: Changed Queue and Finished Implementing Deque
-Grace :: 
 ==============================================================
+
 2017-06-5
 --------------------------------------------------------------
-Kenny ::
+Kenny :: allow negative numbers for input, add selection and insertion sort, better binary tree display
 Jasper :: Added Min Heap, added uniqueness to binary search trees
-Grace :: 
+Grace :: helped do binary tree display
 ==============================================================
+
 2017-06-6
 --------------------------------------------------------------
-Kenny ::
+Kenny :: add tree traversals
 Jasper :: Finished Min Heap, change buttons
-Grace :: 
+Grace :: fixed DLL arrow display
 ==============================================================
-
-
