@@ -124,7 +124,14 @@ Grace ::
 2017-06-5
 --------------------------------------------------------------
 Kenny ::
-Jasper :: Changed Queue and Finished Implementing Deque
+Jasper :: Added Min Heap, added uniqueness to binary search trees
 Grace :: 
 ==============================================================
+2017-06-6
+--------------------------------------------------------------
+Kenny ::
+Jasper :: Finished Min Heap, change buttons
+Grace :: 
+==============================================================
+
 
