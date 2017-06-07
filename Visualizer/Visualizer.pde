@@ -44,7 +44,7 @@ void setup() {
   structures.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
   structures.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   structures.add(new Button(350, 0, 60, 40, "Stack", 3));
-  structures.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
+  structures.add(new Button(410, 0, 100, 40, "Binary Search"+  "\nTree", 4));
   structures.add(new Button(510,0,100,40, "Queue",5));
   structures.add(new Button(610,0,100,40, "Deque",6));
   structures.add(new Button(710,0,100,40, "Min Heap",7));
