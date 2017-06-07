@@ -3,7 +3,6 @@ void displayBt() {
   int layer = 0;
   //position for that layer (starting at 0)
   int i = 0;
-  
   float y = 100;
   int size = 40;
   displayBtNode(bt.getRoot(), layer, i, y, size);

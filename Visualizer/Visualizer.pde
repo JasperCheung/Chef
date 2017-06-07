@@ -46,10 +46,12 @@ void setup() {
   structures.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
   structures.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   structures.add(new Button(350, 0, 60, 40, "Stack", 3));
+
   structures.add(new Button(410, 0, 120, 40, "Binary Search Tree", 4));
   structures.add(new Button(530,0,100,40, "Queue",5));
   structures.add(new Button(630,0,100,40, "Deque",6));
   structures.add(new Button(730,0,100,40, "Min Heap",7));
+
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
@@ -483,14 +485,17 @@ void algorithmAction(int actionID) {
   case 2:
     insertionSort();
     break;
-    case 3:
-     bt.preOrderTrav();
-     return;
+  case 3:
+    bt.preOrderTrav();
+    System.out.println();
+    return;
   case 4:
-     bt.inOrderTrav();
-     return;
+    bt.inOrderTrav();
+    System.out.println();
+    return;
   case 5:
     bt.postOrderTrav();
+    System.out.println();
     return;
   default:
     System.out.println("Unknown actionID");
