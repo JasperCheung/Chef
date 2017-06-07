@@ -21,17 +21,19 @@ ArrayList<Button> stepsUI;
 //Data structures
 //state for which data structure to display
 int dataStructure;
-
+//arrayList
 ArrayList<Integer> al;
 //singly-linked and double-linked lists
 LinkedList<Integer> sll;
 LinkedList<Integer> dll;
-
+//stack
 Stack<Integer> st;
-BST bt;
+//Binary Search Tree
+BST bt; 
+//Queues and Deques
 ArrayDeque<Integer> que;
 ArrayDeque<Integer> dQue;
-
+//MinHeap
 ALHeap minHp;
 
 void setup() {
@@ -44,10 +46,10 @@ void setup() {
   structures.add(new Button(80, 0, 130, 40, "Singly-Linked List", 1));
   structures.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   structures.add(new Button(350, 0, 60, 40, "Stack", 3));
-  structures.add(new Button(410, 0, 100, 40, "Binary Tree", 4));
-  structures.add(new Button(510,0,100,40, "Queue",5));
-  structures.add(new Button(610,0,100,40, "Deque",6));
-  structures.add(new Button(710,0,100,40, "Min Heap",7));
+  structures.add(new Button(410, 0, 120, 40, "Binary Search Tree", 4));
+  structures.add(new Button(530,0,100,40, "Queue",5));
+  structures.add(new Button(630,0,100,40, "Deque",6));
+  structures.add(new Button(730,0,100,40, "Min Heap",7));
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
@@ -96,6 +98,10 @@ void setup() {
   dQue.addFirst(4);
   dQue.addLast(1);
   minHp = new ALHeap();
+  minHp.add(5);
+  minHp.add(6);
+  minHp.add(99);
+  
   
 }
 
