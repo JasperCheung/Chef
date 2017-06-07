@@ -10,29 +10,47 @@ Java Visualizer
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Learning the ways of Processing.
-Created a workable User Interface.
+-Learning the ways of Processing.
+- Taking in User input
+-Created a workable User Interface:
+Using Buttons Classes and Switch Statements!
+Looping through arrays of Buttons to display
+-Displaying Trees and Heaps had nodes that overlapped each other. 
+-Just displaying nodes was a big obstacle. We made the slopes steeper the farther down you get the tree
+- Displaying Data Structures Solved by:
+Helper Functions(ex. all of the data structures have a display() and a displayUI() ).
+- Doing the sort by using a helper function that seperates all the steps of the sort.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-Switch Statement Galore
 PROCESSING
-Making one's own widgets in Processing isn't too painful.
-But coding the interaction can be quite messy.
+-Programming user inputs is involves alot more steps( never thought about key presses and mouse clicks ) 
+-Making one's own widgets in Processing isn't too painful.
+-But coding the interaction can be quite messy.
 (Splitting the code into individual tabs made things a lot cleaner).
 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+-We decided to have seperate tabs for each of the Data Structures
+- We had to cut down on some sorts( only implemented selection, bubble, insertion)
+- Same with searches
+- Traversals for the Binary Search Trees were changed to be displayed in the console. 
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If ya don’t understand something, ask.
-
+- Remember that other people are going to be using your code/ seeing what your displaying
+- GitHub conflicts (bane of my existence)/ try not to delete what your partners did
+- Comments really important especially if the team isn't use to a new tool(Processing)
+- Learning Together, much easier than learning by yourself
+- Bugtesting is important!
+- Somethings look better than others/ layout can be very helpful
+- But don't waste time on beautifying our project
+-Don't forget about the devlog and wait till the end to finish it.
 
  ______   ______   __   __   __       ______   _______     
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
