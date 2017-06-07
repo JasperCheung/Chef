@@ -1,11 +1,10 @@
-void displayDque(){
- 
- int x = 40;
+void displayDque() {
+  int x = 40;
   int y = 200;
   int size = 40;
   for (int i : dQue) {
     if ( x + size > width) {
-      y+=60;
+      y += 60;
       x = 40;
     }
     fill(255);
@@ -16,8 +15,7 @@ void displayDque(){
   }
 }
 
-
-void displayDqueUI(){
+void displayDqueUI() {
   textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
   userInput.add(new Button(100, startYUI, 50, 30, "push", 18));
 

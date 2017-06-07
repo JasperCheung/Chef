@@ -4,7 +4,7 @@ void displayAl() {
   int size = 40;
   for (int i : al) {
     if ( x + size > width) {
-      y+=60;
+      y += 60;
       x = 40;
     }
     fill(255);

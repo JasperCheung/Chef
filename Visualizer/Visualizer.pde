@@ -47,11 +47,10 @@ void setup() {
   structures.add(new Button(210, 0, 140, 40, "Doubly-Linked List", 2));
   structures.add(new Button(350, 0, 60, 40, "Stack", 3));
 
-  structures.add(new Button(410, 0, 120, 40, "Binary Search Tree", 4));
-  structures.add(new Button(530,0,100,40, "Queue",5));
-  structures.add(new Button(630,0,100,40, "Deque",6));
-  structures.add(new Button(730,0,100,40, "Min Heap",7));
-
+  structures.add(new Button(410, 0, 140, 40, "Binary Search Tree", 4));
+  structures.add(new Button(550, 0, 80, 40, "Queue", 5));
+  structures.add(new Button(630, 0, 80, 40, "Deque", 6));
+  structures.add(new Button(710, 0, 100, 40, "Min Heap", 7));
 
   textBoxes = new ArrayList<TextBox>();
   userInput = new ArrayList<Button>();
@@ -103,8 +102,6 @@ void setup() {
   minHp.add(5);
   minHp.add(6);
   minHp.add(99);
-  
-  
 }
 
 void draw() {
@@ -156,7 +153,7 @@ void mousePressed() {
     //if pressed, do the action with the actionId
     if (b.contains(mouseX, mouseY))
       changeStructure(b.actionID);
-  }//BUTTON TEXT BOX
+  }
   for (Button b : userInput) {
     if (b.contains(mouseX, mouseY)) {
       inputAction(b.actionID);
@@ -184,13 +181,13 @@ void keyPressed() {
   String numbers = "0123456789";
   if (numbers.indexOf(key) != -1)
     focus.text += key;
+  if (key == '-' && focus.text.length() == 0)
+    focus.text += key;
   if (key == DELETE || key == BACKSPACE) {
     String text = focus.text;
     if (!text.equals(""))
       focus.text = text.substring(0, text.length() - 1);
   }
-  if (key == '-' && focus.text.length() == 0)
-    focus.text += key;
 }
 
 void changeStructure(int actionID) {
@@ -203,6 +200,7 @@ void changeStructure(int actionID) {
   userInput.clear();
   algorithms.clear();
   stepsUI.clear();
+  
   //show new UI
   switch(dataStructure) {
   case 0:
@@ -234,8 +232,8 @@ void changeStructure(int actionID) {
 
 void inputAction(int actionID) {
   switch(actionID) {
-    //arrayList
-    //Add
+  //arrayList
+  //Add
   case 0: 
     {
       Integer num = numFromTextbox(0);
@@ -244,7 +242,7 @@ void inputAction(int actionID) {
       al.add(num);
       break;
     }
-    //add at index
+  //add at index
   case 1: 
     {
       Integer ind = numFromTextbox(1);
@@ -254,7 +252,7 @@ void inputAction(int actionID) {
       al.add(ind, val);
       break;
     }
-    //remove 
+  //remove
   case 2: 
     {
       Integer ind = numFromTextbox(3);
@@ -263,7 +261,7 @@ void inputAction(int actionID) {
       al.remove((int)(ind));
       break;
     }
-    //set
+  //set
   case 3: 
     {
       Integer ind = numFromTextbox(4);
@@ -273,8 +271,8 @@ void inputAction(int actionID) {
       al.set(ind, val);
       break;
     }
-    //singly-linked list 
-    //add
+  //singly-linked list
+  //add
   case 4: 
     {
       Integer num = numFromTextbox(0);
@@ -283,7 +281,7 @@ void inputAction(int actionID) {
       sll.add(num);
       break;
     }
-    //add-at-index
+  //add-at-index
   case 5: 
     {
       Integer ind = numFromTextbox(1);
@@ -293,7 +291,7 @@ void inputAction(int actionID) {
       sll.add(ind, val);
       break;
     }
-    //remove
+  //remove
   case 6: 
     {
       Integer ind = numFromTextbox(3);
@@ -302,7 +300,7 @@ void inputAction(int actionID) {
       sll.remove((int)(ind));
       break;
     }
-    //set
+  //set
   case 7: 
     {
       Integer ind = numFromTextbox(4);
@@ -312,8 +310,8 @@ void inputAction(int actionID) {
       sll.set(ind, val);
       break;
     } 
-    //DLL
-    //add
+  //DLL
+  //add
   case 8: 
     {
       Integer num = numFromTextbox(0);
@@ -322,7 +320,7 @@ void inputAction(int actionID) {
       dll.add(num);
       break;
     }
-    //add-at-index
+  //add-at-index
   case 9: 
     {
       Integer ind = numFromTextbox(1);
@@ -332,7 +330,7 @@ void inputAction(int actionID) {
       dll.add(ind, val);
       break;
     }
-    //remove
+  //remove
   case 10: 
     {
       Integer ind = numFromTextbox(3);
@@ -341,7 +339,7 @@ void inputAction(int actionID) {
       dll.remove((int)(ind));
       break;
     }
-    //set
+  //set
   case 11: 
     {
       Integer ind = numFromTextbox(4);
@@ -351,8 +349,8 @@ void inputAction(int actionID) {
       dll.set(ind, val);
       break;
     } 
-    //STACKS!!!
-    //push
+  //STACKS!!!
+  //push
   case 12: 
     {
       Integer val = numFromTextbox(0);
@@ -361,19 +359,24 @@ void inputAction(int actionID) {
       st.push(val);
       break;
     }
+  //pop
   case 13:
     if (!st.empty())
       st.pop();
     break;
+  //binary search tree
+  //insert
   case 14:
     {
     Integer val = numFromTextbox(0);
     if ( ( val == null ) || ( bt.search(val) != null ) ){
       System.out.print( " Can only insert integers not on the tree already " );
-      break;}
+      break;
+    }
     bt.insert(val);
     break;
     }
+  //remove
   case 15:
     {
       Integer val = numFromTextbox(1);
@@ -382,6 +385,8 @@ void inputAction(int actionID) {
       bt.remove(val);
       break;
     }
+  //queue
+  //enqueue
   case 16:
     {
       Integer val = numFromTextbox(0);
@@ -390,6 +395,7 @@ void inputAction(int actionID) {
         que.addLast(val);
         break;
     }
+  //dequeue
   case 17: 
     {
       if(!que.isEmpty())
@@ -405,16 +411,15 @@ void inputAction(int actionID) {
         break;
       dQue.addFirst(val);
       break;
-      
     }
-  //pop
+  //removeFirst
   case 19:
     {
-       if(!dQue.isEmpty())
+      if(!dQue.isEmpty())
         dQue.removeFirst();
       break;
-      
     }
+  //enqueue
   case 20:
     { 
       Integer val = numFromTextbox(1);
@@ -423,12 +428,12 @@ void inputAction(int actionID) {
       dQue.addLast(val);
       break;
     }
+  //removeLast
   case 21:
     {
-       if(!dQue.isEmpty())
+      if(!dQue.isEmpty())
         dQue.removeLast ();
       break;
-      
     }
   //min heap
   //add
@@ -439,15 +444,13 @@ void inputAction(int actionID) {
         break;
       minHp.add(val);
       break;
-      
     }
   //removeMin
   case 23:
     {
-       if(!minHp.isEmpty())
+      if(!minHp.isEmpty())
         minHp.removeMin();
       break;
-      
     }
   default:
     System.out.println("Unknown actionID");

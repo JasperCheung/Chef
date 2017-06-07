@@ -1,4 +1,4 @@
-void  displayMinHp(){
+void displayMinHp() {
   //split evenly the space between all nodes of a particular layer
 
   int layer = 0;
@@ -35,14 +35,6 @@ void displayMinHp(int index, int layer, int i, float y, int size) {
   text(minHp._heap.get(index), x, y);
 }
 
-
-
-
-  
-
-  
-
- 
 void displayMinHpUI() {
   textBoxes.add(new TextBox(0, startYUI, 100, 60, "value"));
   userInput.add(new Button(100, startYUI, 60, 30, "add", 22));
