@@ -10,6 +10,7 @@ Java Visualizer
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Learning the ways of Processing.
 Created a workable User Interface.
 
 UNRESOLVED ISSUES
@@ -118,25 +119,25 @@ Jasper :: added queues and deques
 Grace :: fixed off screen cases for DLL, fixed flow and plan
 ==============================================================
 
-2017-06-2
+2017-06-02
 --------------------------------------------------------------
 Kenny :: prepare for algorithm UI, add bubbleSort
 Grace :: split data structures to own files, better DLL display
 ==============================================================
 
-2017-06-4
+2017-06-04
 --------------------------------------------------------------
 Jasper :: Changed Queue and Finished Implementing Deque
 ==============================================================
 
-2017-06-5
+2017-06-05
 --------------------------------------------------------------
 Kenny :: allow negative numbers for input, add selection and insertion sort, better binary tree display
 Jasper :: Added Min Heap, added uniqueness to binary search trees
 Grace :: helped do binary tree display
 ==============================================================
 
-2017-06-6
+2017-06-06
 --------------------------------------------------------------
 Kenny :: add tree traversals
 Jasper :: Finished Min Heap, change buttons
