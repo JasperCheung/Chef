@@ -11,11 +11,11 @@ Java Visualizer
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -Learning the ways of Processing.
-- Taking in User input
+-Taking in User input (created Button and Textbook class for this)
 -Created a workable User Interface:
 Using Buttons Classes and Switch Statements!
 Looping through arrays of Buttons to display
--Displaying Trees and Heaps had nodes that overlapped each other. 
+-Displaying Trees and Heaps had nodes that overlapped each other.(checks created) 
 -Just displaying nodes was a big obstacle. We made the slopes steeper the farther down you get the tree
 - Displaying Data Structures Solved by:
 Helper Functions(ex. all of the data structures have a display() and a displayUI() ).
@@ -23,14 +23,15 @@ Helper Functions(ex. all of the data structures have a display() and a displayUI
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- When the tree’s height gets greater than 5, the nodes get cluttered.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--Switch Statement Galore
+- Switch Statement Galore
 PROCESSING
--Programming user inputs is involves alot more steps( never thought about key presses and mouse clicks ) 
--Making one's own widgets in Processing isn't too painful.
--But coding the interaction can be quite messy.
+- Programming user inputs is involves a lot more steps( never thought about key presses and mouse clicks and continuously checking them ) 
+- Making one's own widgets in Processing isn't too painful.
+- But coding the interaction can be quite messy.
 (Splitting the code into individual tabs made things a lot cleaner).
 
 
@@ -50,7 +51,9 @@ LESSONS LEARNED
 - Bugtesting is important!
 - Somethings look better than others/ layout can be very helpful
 - But don't waste time on beautifying our project
--Don't forget about the devlog and wait till the end to finish it.
+- Don't forget about the devlog and wait till the end to finish it. (lol)
+- For processing, the displays are instantaneous, much like SOP statements;
+use that to advantage.
 
  ______   ______   __   __   __       ______   _______     
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
